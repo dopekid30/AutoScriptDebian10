@@ -1,9 +1,12 @@
 #!/bin/bash
-# By LostServer
-# 
-# ==================================================
+# Created by https://www.facebook.com/joash.singh.90
+# Script by Dope~kid
 
-# initializing var
+# Requirement
+apt-get -y update && apt-get -y upgrade
+apt-get -y install curl
+
+# Initializing IP
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- ifconfig.co);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
@@ -11,23 +14,23 @@ NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 source /etc/os-release
 ver=$VERSION_ID
 
-#detail nama perusahaan
-country=ID
-state=Indonesia
-locality=Indonesia
-organization=lostserver.xyz
-organizationalunit=lostserver.xyz
-commonname=lostserver.xyz
-email=admin@lostserver.xyz
+# Stunnel Cert Info
+country=South Africa
+state=Africa
+locality=Durban
+organization=DopekidVPN
+organizationalunit=DopekidVPN
+commonname=DopekidVPN
+email=joashsingh14@gmail.com
 
-# simple password minimal
+# Password Setup
 wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/password"
 chmod +x /etc/pam.d/common-password
 
-# go to root
+# Goto Root
 cd
 
-# Edit file /etc/systemd/system/rc-local.service
+# System Setup
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
 Description=/etc/rc.local
@@ -43,7 +46,7 @@ SysVStartPriority=99
 WantedBy=multi-user.target
 END
 
-# nano /etc/rc.local
+# Reboot Settings
 cat > /etc/rc.local <<-END
 #!/bin/sh -e
 # rc.local
@@ -51,55 +54,44 @@ cat > /etc/rc.local <<-END
 exit 0
 END
 
-# Ubah izin akses
+# Set Permissions
 chmod +x /etc/rc.local
 
-# enable rc local
+# Enable On Reboot
 systemctl enable rc-local
 systemctl start rc-local.service
 
-# disable ipv6
+# Disable IPV6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
-# set repo
-sh -c 'echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list'
-apt install gnupg gnupg1 gnupg2 -y
-wget http://www.webmin.com/jcameron-key.asc
-apt-key add jcameron-key.asc
+# Install Components
+apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils rsyslog iftop htop net-tools zip unzip nano sed screen gnupg gnupg1 gnupg2 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git
+apt-get -y install libio-pty-perl libauthen-pam-perl apt-show-versions libnet-ssleay-perl
 
-#update
-apt update -y
-apt upgrade -y
-apt dist-upgrade -y
+# Set System Time
+ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime
 
-# install wget and curl
-apt -y install wget curl
-
-# set time GMT +7
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-
-# set locale
+# Set Sshd
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
-# install
-apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git
+# NeoFetch
 echo "clear" >> .profile
 echo "neofetch" >> .profile
 echo "echo by LostServer" >> .profile
 
-# install webserver
+# Install Webserver
 apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/nginx.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by LostServer</pre>" > /home/vps/public_html/index.html
+echo "<pre>SETUP BY DOPEKID</pre>" > /home/vps/public_html/index.html
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/vps.conf"
 /etc/init.d/nginx restart
 
-# install badvpn
+# Install Badvpn
 cd
 wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
@@ -110,10 +102,10 @@ screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
 
-# setting port ssh
+# Setup SSH
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 
-# install dropbear
+# Install Dropbear
 apt -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=143/g' /etc/default/dropbear
@@ -122,35 +114,26 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/dropbear restart
 
-# install squid
+# Install Squid Proxy
 cd
 apt -y install squid3
 wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
-# setting vnstat
-apt -y install vnstat
-/etc/init.d/vnstat restart
-apt -y install libsqlite3-dev
-wget https://humdi.net/vnstat/vnstat-2.6.tar.gz
-tar zxvf vnstat-2.6.tar.gz
-cd vnstat-2.6
-./configure --prefix=/usr --sysconfdir=/etc && make && make install 
-cd
-vnstat -u -i $NET
-sed -i 's/Interface "'""eth0""'"/Interface "'""$NET""'"/g' /etc/vnstat.conf
-chown vnstat:vnstat /var/lib/vnstat -R
-systemctl enable vnstat
-/etc/init.d/vnstat restart
-rm -f /root/vnstat-2.6.tar.gz 
-rm -rf /root/vnstat-2.6
-
-# install webmin
-apt install webmin -y
+# Install Webmin
+wget "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/webmin_1.801_all.deb"
+dpkg --install webmin_1.801_all.deb;
+apt-get -y -f install;
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
+rm /root/webmin_1.801_all.deb
 /etc/init.d/webmin restart
 
-# install stunnel
+# Webmin Configuration
+sed -i '$ i\dope: acl adsl-client ajaxterm apache at backup-config bacula-backup bandwidth bind8 burner change-user cluster-copy cluster-cron cluster-passwd cluster-shell cluster-software cluster-useradmin cluster-usermin cluster-webmin cpan cron custom dfsadmin dhcpd dovecot exim exports fail2ban fdisk fetchmail file filemin filter firewall firewalld fsdump grub heartbeat htaccess-htpasswd idmapd inetd init inittab ipfilter ipfw ipsec iscsi-client iscsi-server iscsi-target iscsi-tgtd jabber krb5 ldap-client ldap-server ldap-useradmin logrotate lpadmin lvm mailboxes mailcap man mon mount mysql net nis openslp package-updates pam pap passwd phpini postfix postgresql ppp-client pptp-client pptp-server proc procmail proftpd qmailadmin quota raid samba sarg sendmail servers shell shorewall shorewall6 smart-status smf software spam squid sshd status stunnel syslog-ng syslog system-status tcpwrappers telnet time tunnel updown useradmin usermin vgetty webalizer webmin webmincron webminlog wuftpd xinetd' /etc/webmin/webmin.acl
+sed -i '$ i\dope:x:0' /etc/webmin/miniserv.users
+/usr/share/webmin/changepass.pl /etc/webmin dope 12345
+
+# Install Stunnel
 apt install stunnel4 -y
 cat > /etc/stunnel/stunnel.conf <<-END
 cert = /etc/stunnel/stunnel.pem
@@ -169,36 +152,32 @@ connect = 127.0.0.1:1194
 
 END
 
-# make a certificate
+# Make Stunnel Certificate 
 openssl genrsa -out key.pem 2048
 openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
 -subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
 cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 
-# konfigurasi stunnel
+# Configuration Stunnel
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
-#OpenVPN
+# OpenVPN
 wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
-# install fail2ban
+# Install Fail2ban
 apt -y install fail2ban
 
-# xml parser
-cd
-apt install -y libxml-parser-perl
-
-# banner /etc/issue.net
+# SSH/Dropbear Banner
 wget -O /etc/issue.net "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/bannerssh.conf"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
-#install bbr dan optimasi kernel
+# Update BBR
 wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 
-# blockir torrent
+# Block Torrents
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
@@ -215,7 +194,7 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 
-# download script
+# Download Script
 cd /usr/bin
 wget -O addhost "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/addhost.sh"
 wget -O about "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/about.sh"
@@ -237,8 +216,10 @@ wget -O ceklim "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/m
 wget -O tendang "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/tendang.sh"
 wget -O clear-log "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/clear-log.sh"
 
-echo "0 5 * * * root clear-log && reboot" >> /etc/crontab
+# Clear Logs
+echo "0 5 * * * root clear-log" >> /etc/crontab
 
+# Script Permissions
 chmod +x addhost
 chmod +x menu
 chmod +x usernew
@@ -259,7 +240,7 @@ chmod +x ram
 chmod +x renew
 chmod +x clear-log
 
-# remove unnecessary files
+# Purge Unnecessary Files
 apt -y autoclean
 apt -y remove --purge unscd
 apt-get -y --purge remove samba*;
@@ -268,7 +249,7 @@ apt-get -y --purge remove bind9*;
 apt-get -y remove sendmail*
 apt -y autoremove
 
-# finishing
+# Restarting Services
 cd
 chown -R www-data:www-data /home/vps/public_html
 /etc/init.d/nginx restart
@@ -279,19 +260,13 @@ chown -R www-data:www-data /home/vps/public_html
 /etc/init.d/fail2ban restart
 /etc/init.d/webmin restart
 /etc/init.d/stunnel4 restart
-/etc/init.d/vnstat restart
 /etc/init.d/squid restart
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
 
+# Finishing
 history -c
 echo "unset HISTFILE" >> /etc/profile
-
 cd
 rm -f /root/ssh-vpn.sh
-
-# finihsing
-clear
-neofetch
-netstat -nutlp
