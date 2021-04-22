@@ -34,6 +34,7 @@ mkdir /var/lib/premium-script;
 echo -e "${green}ENTER THE VPS SUBDOMAIN/HOSTNAME, IF NOT AVAILABLE, PLEASE CLICK ENTER${NC}"
 read -p "Hostname / Domain: " host
 echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
+echo "$host" >> /root/domain
 
 # Install SSH/OVPN
 wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Services/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
