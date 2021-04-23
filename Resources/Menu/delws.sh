@@ -8,9 +8,9 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/v2ray/config.json")
 
 	clear
 	echo ""
-	echo " Select the existing client you want to remove"
-	echo " Press CTRL+C to return"
-	echo " ==============================="
+	echo " ===================================="
+        echo " Select The Client You Want To Remove"
+	echo " ===================================="
 	echo "     No  Expired   User"
 	grep -E "^### " "/etc/v2ray/config.json" | cut -d ' ' -f 2-3 | nl -s ') '
 	until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
@@ -28,9 +28,9 @@ rm -f /etc/v2ray/$user-tls.json /etc/v2ray/$user-none.json
 systemctl restart v2ray
 systemctl restart v2ray@none
 clear
-echo " V2RAY Akun berhasil dihapus"
+echo " =========================="
+echo " Account Deleted Successful"
 echo " =========================="
 echo " Client Name : $user"
-echo " Expired On  : $exp"
+echo " Expire On   : $exp"
 echo " =========================="
-echo " By LostServer"
