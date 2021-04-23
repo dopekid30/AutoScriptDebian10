@@ -373,7 +373,7 @@ chmod +x speedtest
 chmod +x info
 chmod +x about
 chmod +x autokill
-chmod +x tendang
+chmod +x autokillssh
 chmod +x ceklim
 chmod +x ram
 chmod +x renew
