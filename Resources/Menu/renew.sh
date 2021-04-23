@@ -7,10 +7,10 @@ echo -e ""
 echo -e "       AutoScriptVPS by LostServer    "
 echo -e ""
 echo -e "======================================"
-read -p "         Username       :  " User
+read -p "         Iput Username to Renew  :  " User
 egrep "^$User" /etc/passwd >/dev/null
 if [ $? -eq 0 ]; then
-read -p "         Day Extend     :  " Days
+read -p "         How many days to extend?:  " Days
 Today=`date +%s`
 Days_Detailed=$(( $Days * 86400 ))
 Expire_On=$(($Today + $Days_Detailed))
