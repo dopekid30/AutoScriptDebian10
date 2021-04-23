@@ -9,9 +9,9 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/v2ray/config.json")
 
 	clear
 	echo ""
-        echo -e "=================================="
-        echo "  Select the client you want to renew"
-	echo -e "=================================="
+        echo "==================================="
+        echo "Select the client you want to renew"
+	echo "==================================="
 	grep -E "^### " "/etc/v2ray/config.json" | cut -d ' ' -f 2-3 | nl -s ') '
 	until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
 		if [[ ${CLIENT_NUMBER} == '1' ]]; then
@@ -38,5 +38,4 @@ echo " =========================="
 echo " Client Name : $user"
 echo " Expired On  : $exp4"
 echo " =========================="
-echo " By LostServer"
 
