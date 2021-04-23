@@ -24,9 +24,6 @@ apt upgrade -y
 apt dist-upgrade -y
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
-# Install Curl
-apt -y install curl
-
 # Script Access 
 MYIP=$(wget -qO- icanhazip.com);
 echo -e "${green}CHECKING SCRIPT ACCESS${NC}"
