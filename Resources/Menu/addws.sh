@@ -6,7 +6,7 @@ else
 domain=$IP
 fi
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
-		read -rp " Username: " -e user
+		read -rp "Username: " -e user
 		CLIENT_EXISTS=$(grep -w $user /etc/v2ray/config.json | wc -l)
 
 		if [[ ${CLIENT_EXISTS} == '1' ]]; then
