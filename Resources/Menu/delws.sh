@@ -28,9 +28,9 @@ rm -f /etc/v2ray/$user-tls.json /etc/v2ray/$user-none.json
 systemctl restart v2ray
 systemctl restart v2ray@none
 clear
-echo " =========================="
-echo " Account Deleted Successful"
-echo " =========================="
+echo " ==========================="
+echo " Account Deleted Successfull"
+echo " ==========================="
 echo " Client Name : $user"
 echo " Expire On   : $exp"
-echo " =========================="
+echo " ==========================="
