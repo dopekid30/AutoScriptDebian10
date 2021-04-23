@@ -38,29 +38,13 @@ echo "$host" >> /root/domain
 
 # Install SSH/OVPN
 wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Services/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
-wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Services/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
-
-# Install SSR
-wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Services/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
-wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Services/shadowsocks.sh && chmod +x shadowsocks.sh && screen -S ss ./shadowsocks.sh
-
-# Install WG
-wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Services/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
 
 # Install V2ray
 wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Services/ins-vt.sh && chmod +x ins-vt.sh && sed -i -e 's/\r$//' ins-vt.sh && screen -S v2ray ./ins-vt.sh
 
-# Install Ipsec
-wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Services/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
-
 # Remove Installation Files
 rm -f /root/ssh-vpn.sh
-rm -f /root/sstp.sh
-rm -f /root/ssr.sh
-rm -f /root/shadowsocks.sh
-rm -f /root/wg.sh
 rm -f /root/ins-vt.sh
-rm -f /root/ipsec.sh
 history -c
 
 # Script Information
