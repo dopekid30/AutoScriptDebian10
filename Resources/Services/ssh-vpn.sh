@@ -2,10 +2,6 @@
 # Created by https://www.facebook.com/joash.singh.90
 # Script by Dope~kid
 
-# Requirement
-apt-get -y update && apt-get -y upgrade
-apt-get -y install curl
-
 # Initializing IP
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- ifconfig.co);
