@@ -264,7 +264,7 @@ cat /etc/openvpn/keys/ca.crt >> /home/vps/public_html/Dopekid.ovpn
 echo '</ca>' >> /home/vps/public_html/Dopekid.ovpn
 
 # Openvpn SSL Config
-cat > /home/vps/public_html/Dopekid SSL.ovpn <<-END
+cat > /home/vps/public_html/Dopekid-SSL.ovpn <<-END
 # OpenVPN SSL Configuration By Dopekid
 
 client
@@ -290,15 +290,15 @@ verb 3
 pull
 
 END
-echo '<ca>' >> /home/vps/public_html/Dopekid SSL.ovpn
-cat /etc/openvpn/keys/ca.crt >> /home/vps/public_html/Dopekid SSL.ovpn
-echo '</ca>' >> /home/vps/public_html/Dopekid SSL.ovpn
+echo '<ca>' >> /home/vps/public_html/Dopekid-SSL.ovpn
+cat /etc/openvpn/keys/ca.crt >> /home/vps/public_html/Dopekid-SSL.ovpn
+echo '</ca>' >> /home/vps/public_html/Dopekid-SSL.ovpn
 
 # Install Fail2ban
 apt -y install fail2ban
 
 # SSH/Dropbear Banner
-wget -O /etc/issue.net "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/bannerssh.conf"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/banner"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
