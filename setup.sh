@@ -18,6 +18,12 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 
+# Requirement
+apt-get -y update && apt-get -y upgrade
+apt-get -y install curl
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt install -y bzip2 gzip coreutils
+
+
 # Script Access 
 MYIP=$(wget -qO- icanhazip.com);
 echo -e "${green}CHECKING SCRIPT ACCESS${NC}"
@@ -35,9 +41,6 @@ echo -e "${green}ENTER THE VPS SUBDOMAIN/HOSTNAME, IF NOT AVAILABLE, PLEASE CLIC
 read -p "Hostname / Domain: " host
 echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
 echo "$host" >> /root/domain
-
-# Quick Build
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt install -y bzip2 gzip coreutils curl
 
 # Install SSH/OVPN
 wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Services/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
