@@ -11,7 +11,7 @@ source /etc/os-release
 ver=$VERSION_ID
 
 # Stunnel Cert Info
-country=South Africa
+country=ID
 state=Africa
 locality=Durban
 organization=DopekidVPN
