@@ -20,7 +20,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/v2ray/config.json")
 			read -rp "Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
 		fi
 	done
-read -p "Expired (days): " masaaktif
+read -p "How many days?: " masaaktif
 user=$(grep -E "^### " "/etc/v2ray/config.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/v2ray/config.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
 now=$(date +%Y-%m-%d)
@@ -33,10 +33,10 @@ sed -i "s/### $user $exp/### $user $exp4/g" /etc/v2ray/config.json
 sed -i "s/### $user $exp/### $user $exp4/g" /etc/v2ray/none.json
 clear
 echo ""
-echo " =========================="
-echo " Account Renewed Successful"
-echo " =========================="
+echo " ==========================="
+echo " Account Renewed Successfull"
+echo " ==========================="
 echo " Client Name : $user"
 echo " Expired On  : $exp4"
-echo " =========================="
+echo " ==========================="
 
