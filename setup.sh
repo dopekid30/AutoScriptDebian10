@@ -21,7 +21,7 @@ NC='\e[0m'
 # Requirement
 apt update -y
 apt upgrade -y
-apt dist-upgrade -y
+update-grub
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 # Script Access 
