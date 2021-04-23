@@ -19,10 +19,12 @@ green='\e[0;32m'
 NC='\e[0m'
 
 # Requirement
-apt-get -y update && apt-get -y upgrade
-apt-get -y install curl
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt install -y bzip2 gzip coreutils
+apt update -y
+apt upgrade -y
+apt dist-upgrade -y
 
+# Install Curl
+apt -y install curl
 
 # Script Access 
 MYIP=$(wget -qO- icanhazip.com);
