@@ -61,8 +61,21 @@ systemctl start rc-local.service
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
+# Set Repo
+sh -c 'echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list'
+apt install gnupg gnupg1 gnupg2 -y
+wget http://www.webmin.com/jcameron-key.asc
+apt-key add jcameron-key.asc
+
+# Update
+apt update -y
+apt upgrade -y
+apt dist-upgrade -y
+
+# Install Wget And Curl
+apt -y install wget curl
+
 # Install Components
-apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git
 apt-get -y install libio-pty-perl libauthen-pam-perl apt-show-versions libnet-ssleay-perl
 
 # Set System Time
@@ -72,9 +85,11 @@ ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
 # NeoFetch
+apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git
 echo "clear" >> .profile
 echo "neofetch" >> .profile
-echo "echo by LostServer" >> .profile
+echo "echo Script By Dope-Kid" >> .profile
+echo "echo Type 'menu' to list commands" >> .profile
 
 # Install Webserver
 apt -y install nginx
