@@ -107,7 +107,4 @@ echo "   - Whatsapp                : 082386143124"  | tee -a log-install.txt
 echo "   - Facebook                : https://www.facebook.com/Marlosirega" | tee -a log-install.txt
 echo "--------------------------------------------------------------------------------" | tee -a log-install.txt
 echo ""
-echo " REBOOT SYSTEM 10 SECONDS"
-sleep 10
 rm -f setup.sh
-reboot
