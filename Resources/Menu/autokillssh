@@ -1,6 +1,4 @@
 #!/bin/bash
-# Script by : LostServer
-#!/bin/bash
 clear
 MAX=2
 if [ -e "/var/log/auth.log" ]; then
