@@ -33,7 +33,8 @@ sed -i "s/### $user $exp/### $user $exp4/g" /etc/v2ray/config.json
 sed -i "s/### $user $exp/### $user $exp4/g" /etc/v2ray/none.json
 clear
 echo ""
-echo " Akun VMESS berhasil diperpanjang"
+echo " =========================="
+echo " Account Renewed Successful"
 echo " =========================="
 echo " Client Name : $user"
 echo " Expired On  : $exp4"
