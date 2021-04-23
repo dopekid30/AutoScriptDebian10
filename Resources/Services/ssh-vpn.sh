@@ -143,7 +143,7 @@ socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 
 [dropbear]
-accept = 443
+accept = 442
 connect = 127.0.0.1:109
 
 [openvpn]
@@ -162,8 +162,107 @@ cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
-# OpenVPN
-wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+# Install OpenVPN
+apt install openssl iptables iptables-persistent -y
+wget -O /etc/openvpn/vpn.zip "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/vpn.zip"
+cd /etc/openvpn/
+unzip vpn.zip
+rm -f vpn.zip
+cd
+mkdir -p /usr/lib/openvpn/
+cp /usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so /usr/lib/openvpn/openvpn-plugin-auth-pam.so
+
+# OpenVPN IPV4 Fowarding
+echo 1 > /proc/sys/net/ipv4/ip_forward
+sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
+
+# OpenVPN Firewall Settings
+iptables -t nat -I POSTROUTING -s 10.6.0.0/24 -o $ANU -j MASQUERADE
+iptables -t nat -I POSTROUTING -s 10.7.0.0/24 -o $ANU -j MASQUERADE
+iptables-save > /etc/iptables.up.rules
+chmod +x /etc/iptables.up.rules
+
+iptables-restore -t < /etc/iptables.up.rules
+netfilter-persistent save
+netfilter-persistent reload
+
+# Iptables Settings
+cat > /etc/network/if-up.d/iptables <<-END
+iptables-restore < /etc/iptables.up.rules
+iptables -t nat -A POSTROUTING -s 10.6.0.0/24 -o $ANU -j SNAT --to xxxxxxxxx
+iptables -t nat -A POSTROUTING -s 10.7.0.0/24 -o $ANU -j SNAT --to xxxxxxxxx
+END
+sed -i $MYIP2 /etc/network/if-up.d/iptables
+chmod +x /etc/network/if-up.d/iptables
+
+# Restart OpenVPN
+systemctl enable openvpn
+systemctl start openvpn
+/etc/init.d/openvpn restart
+/etc/init.d/openvpn status
+
+# Openvpn Config
+cat > /home/vps/public_html/Dopekid.ovpn <<-END
+# OpenVPN Configuration By Dopekid
+
+client
+dev tun
+proto tcp
+remote $MYIP 1194
+http-proxy $MYIP 8080
+remote-cert-tls server
+resolv-retry infinite
+nobind
+tun-mtu 1500
+mssfix 1500
+persist-key
+persist-tun
+ping-restart 0
+ping-timer-rem
+reneg-sec 0
+comp-lzo
+auth SHA512
+auth-user-pass
+auth-nocache
+cipher AES-256-CBC
+verb 3
+pull
+
+END
+echo '<ca>' >> /home/vps/public_html/Dopekid.ovpn
+cat /etc/openvpn/keys/ca.crt >> /home/vps/public_html/Dopekid.ovpn
+echo '</ca>' >> /home/vps/public_html/Dopekid.ovpn
+
+# Openvpn SSL Config
+cat > /home/vps/public_html/Dopekid SSL.ovpn <<-END
+# OpenVPN SSL Configuration By Dopekid
+
+client
+dev tun
+proto tcp
+remote $MYIP 992
+remote-cert-tls server
+resolv-retry infinite
+nobind
+tun-mtu 1500
+mssfix 1500
+persist-key
+persist-tun
+ping-restart 0
+ping-timer-rem
+reneg-sec 0
+comp-lzo
+auth SHA512
+auth-user-pass
+auth-nocache
+cipher AES-256-CBC
+verb 3
+pull
+
+END
+echo '<ca>' >> /home/vps/public_html/Dopekid SSL.ovpn
+cat /etc/openvpn/keys/ca.crt >> /home/vps/public_html/Dopekid SSL.ovpn
+echo '</ca>' >> /home/vps/public_html/Dopekid SSL.ovpn
 
 # Install Fail2ban
 apt -y install fail2ban
@@ -217,7 +316,7 @@ wget -O tendang "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/
 wget -O clear-log "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/clear-log.sh"
 
 # Clear Logs
-echo "0 5 * * * root clear-log" >> /etc/crontab
+echo "0 0 * * * root clear-log" >> /etc/crontab
 
 # Script Permissions
 chmod +x addhost
