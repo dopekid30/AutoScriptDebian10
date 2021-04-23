@@ -22,6 +22,7 @@ NC='\e[0m'
 apt update -y
 apt upgrade -y
 apt dist-upgrade -y
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 # Install Curl
 apt -y install curl
