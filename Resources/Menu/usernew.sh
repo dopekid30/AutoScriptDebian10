@@ -2,7 +2,7 @@
 
 read -p "Username : " Login
 read -p "Password : " Pass
-read -p "Expired (Days): " masaaktif
+read -p "How many days?: " masaaktif
 
 IP=$(wget -qO- icanhazip.com);
 echo Script AutoCreate SSH and OpenVPN Account by Dope~Kid
@@ -33,8 +33,8 @@ echo -e "OpenSSH        : 22"
 echo -e "Dropbear       : 143, 109"
 echo -e "SSL/TLS        : 442"
 echo -e "Port Squid     : 3128, 8080 (limit to IP SSH)" 
-echo -e "OpenVPN        : TCP 1194 http://$IP:81/Dopekid.ovpn"
-echo -e "OpenVPN        : SSL 992 http://$IP:81/Dopekid-SSL.ovpn"
+echo -e "OpenVPN        : TCP 1194 http://$IP/Dopekid.ovpn"
+echo -e "OpenVPN        : SSL 992 http://$IP/Dopekid-SSL.ovpn"
 echo -e "badvpn         : 7100, 7200, 7300"
 echo -e "==============================="
 echo -e "Account Expiry : $exp"
