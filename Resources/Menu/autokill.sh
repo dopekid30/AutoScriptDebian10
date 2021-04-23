@@ -17,8 +17,8 @@ case $AutoKill in
                 echo -e ""
                 sleep 1
                 clear
-                rm -f /etc/cron.d/tendang
-                echo "*/1 * * * *  root /usr/bin/tendang" > /etc/cron.d/tendang
+                rm -f /etc/cron.d/autokillssh
+                echo "*/1 * * * *  root /usr/bin/autokillssh" > /etc/cron.d/autokillssh
                 echo -e ""
                 echo -e "======================================"
                 echo -e "      Allowed MultiLogin : 2          "
@@ -30,8 +30,8 @@ case $AutoKill in
                 echo -e ""
                 sleep 1
                 clear
-                rm -f /etc/cron.d/tendang
-                echo "*/5 * * * *  root /usr/bin/tendang" > /etc/cron.d/tendang
+                rm -f /etc/cron.d/autokillssh
+                echo "*/5 * * * *  root /usr/bin/autokillssh" > /etc/cron.d/autokillssh
                 echo -e ""
                 echo -e "======================================"
                 echo -e "      Allowed MultiLogin : 2          "
@@ -43,8 +43,8 @@ case $AutoKill in
                 echo -e ""
                 sleep 1
                 clear
-                rm -f /etc/cron.d/tendang
-                echo "*/5 * * * *  root /usr/bin/tendang" > /etc/cron.d/tendang
+                rm -f /etc/cron.d/autokillssh
+                echo "*/5 * * * *  root /usr/bin/autokillssh" > /etc/cron.d/autokillssh
                 echo -e ""
                 echo -e "======================================"
                 echo -e "      Allowed MultiLogin : 2          "
@@ -53,7 +53,7 @@ case $AutoKill in
                 ;;
                 4)
                 clear
-                rm -f /etc/cron.d/tendang
+                rm -f /etc/cron.d/autokillssh
                 echo -e ""
                 echo -e "======================================"
                 echo -e "      AutoKill MultiLogin Turned Off  "
