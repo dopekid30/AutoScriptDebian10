@@ -1,9 +1,9 @@
 #!/bin/bash
 echo -n > /tmp/other.txt
 data=( `cat /etc/v2ray/vless.json | grep '^###' | cut -d ' ' -f 2`);
-echo "-------------------------------";
+echo "--------------------------------";
 echo "-----=[ Vless User Login ]=-----";
-echo "-------------------------------";
+echo "--------------------------------";
 for akun in "${data[@]}"
 do
 if [[ -z "$akun" ]]; then
@@ -34,7 +34,7 @@ fi
 rm -rf /tmp/ipvmess.txt
 done
 oth=$(cat /tmp/other.txt | sort | uniq | nl)
-echo "other";
+echo "user : Private";
 echo "$oth";
 echo "-------------------------------"
 rm -rf /tmp/other.txt
