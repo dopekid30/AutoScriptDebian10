@@ -187,10 +187,6 @@ socket = r:TCP_NODELAY=1
 accept = 442
 connect = 127.0.0.1:109
 
-[openvpn]
-accept = 992
-connect = 127.0.0.1:1194
-
 END
 
 # Make Stunnel Certificate 
@@ -217,12 +213,8 @@ cp /usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so /usr/lib
 echo 1 > /proc/sys/net/ipv4/ip_forward
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 
-# OpenVPN Firewall Settings
-iptables -t nat -I POSTROUTING -s 10.6.0.0/24 -o $ANU -j MASQUERADE
-iptables -t nat -I POSTROUTING -s 10.7.0.0/24 -o $ANU -j MASQUERADE
-iptables-save > /etc/iptables.up.rules
+# Firewall Settings
 chmod +x /etc/iptables.up.rules
-
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
@@ -273,37 +265,6 @@ END
 echo '<ca>' >> /home/vps/public_html/Dopekid.ovpn
 cat /etc/openvpn/keys/ca.crt >> /home/vps/public_html/Dopekid.ovpn
 echo '</ca>' >> /home/vps/public_html/Dopekid.ovpn
-
-# Openvpn SSL Config
-cat > /home/vps/public_html/Dopekid-SSL.ovpn <<-END
-# OpenVPN SSL Configuration By Dopekid
-
-client
-dev tun
-proto tcp
-remote $MYIP 992
-remote-cert-tls server
-resolv-retry infinite
-nobind
-tun-mtu 1500
-mssfix 1500
-persist-key
-persist-tun
-ping-restart 0
-ping-timer-rem
-reneg-sec 0
-comp-lzo
-auth SHA512
-auth-user-pass
-auth-nocache
-cipher AES-256-CBC
-verb 3
-pull
-
-END
-echo '<ca>' >> /home/vps/public_html/Dopekid-SSL.ovpn
-cat /etc/openvpn/keys/ca.crt >> /home/vps/public_html/Dopekid-SSL.ovpn
-echo '</ca>' >> /home/vps/public_html/Dopekid-SSL.ovpn
 
 # Install Fail2ban
 apt -y install fail2ban
