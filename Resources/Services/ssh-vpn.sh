@@ -62,7 +62,7 @@ echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
 # Install Components
-apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils rsyslog iftop htop net-tools zip unzip nano sed screen gnupg gnupg1 gnupg2 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git
+apt-get -y install bzip2 openssl cron gzip coreutils rsyslog iftop htop net-tools zip unzip nano sed screen gnupg gnupg1 gnupg2 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git
 apt-get -y install libio-pty-perl libauthen-pam-perl apt-show-versions libnet-ssleay-perl
 
 # Set System Time
@@ -77,7 +77,7 @@ echo "neofetch" >> .profile
 echo "echo by LostServer" >> .profile
 
 # Install Webserver
-apt -y install nginx
+apt-get -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
@@ -102,7 +102,7 @@ screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 
 # Install Dropbear
-apt -y install dropbear
+apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=143/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 109"/g' /etc/default/dropbear
@@ -112,7 +112,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 
 # Install Squid Proxy
 cd
-apt -y install squid3
+apt-get -y install squid3
 cat > /etc/squid/squid.conf <<-END
 acl manager proto cache_object
 acl localhost src 127.0.0.1/32 ::1
@@ -160,7 +160,7 @@ sed -i '$ i\dope:x:0' /etc/webmin/miniserv.users
 /usr/share/webmin/changepass.pl /etc/webmin dope 12345
 
 # Install Stunnel
-apt install stunnel4 -y
+apt-get -y install stunnel4
 cat > /etc/stunnel/stunnel.conf <<-END
 cert = /etc/stunnel/stunnel.pem
 client = no
@@ -189,7 +189,7 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 # Install OpenVPN
-apt install openssl iptables iptables-persistent -y
+apt-get -y install openvpn iptables iptables-persistent -y
 wget -O /etc/openvpn/vpn.zip "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/vpn.zip"
 cd /etc/openvpn/
 unzip vpn.zip
@@ -291,7 +291,7 @@ cat /etc/openvpn/keys/ca.crt >> /home/vps/public_html/Dopekid-SSL.ovpn
 echo '</ca>' >> /home/vps/public_html/Dopekid-SSL.ovpn
 
 # Install Fail2ban
-apt -y install fail2ban
+apt-get -y install fail2ban
 
 # SSH/Dropbear Banner
 wget -O /etc/issue.net "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/banner"
@@ -342,8 +342,7 @@ wget -O tendang "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/
 wget -O clear-log "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/clear-log.sh"
 
 # Clear Logs
-echo "0 0 * * * root clear-log" >> /etc/crontab
-
+echo "0 0 * * * root /usr/bin/clear-log" > /etc/cron.d/clear_logs
 # Script Permissions
 chmod +x addhost
 chmod +x menu
@@ -372,7 +371,6 @@ apt-get -y --purge remove samba*;
 apt-get -y --purge remove apache2*;
 apt-get -y --purge remove bind9*;
 apt-get -y remove sendmail*
-apt -y autoremove
 
 # Restarting Services
 cd
