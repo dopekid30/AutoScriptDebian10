@@ -45,9 +45,6 @@ echo "$host" >> /root/domain
 # Install SSH/OVPN
 wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Services/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 
-# Install V2ray
-wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Services/ins-vt.sh && chmod +x ins-vt.sh && sed -i -e 's/\r$//' ins-vt.sh && screen -S v2ray ./ins-vt.sh
-
 # Remove Installation Files
 rm -f /root/ssh-vpn.sh
 rm -f /root/ins-vt.sh
