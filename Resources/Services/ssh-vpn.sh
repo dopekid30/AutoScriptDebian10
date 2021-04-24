@@ -93,13 +93,17 @@ echo "echo Type 'menu' to list commands" >> .profile
 
 # Install Webserver
 apt -y install nginx
+apt-get -y install php-fpm php-cli libssh2-1 php-ssh2 php
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/nginx.conf"
-mkdir -p /home/vps/public_html
-echo "<pre>SETUP BY DOPEKID</pre>" > /home/vps/public_html/index.html
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/vps.conf"
+wget -O /etc/nginx/conf.d/monitoring.conf "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian9/main/Res/Other/monitoring.conf"
+mkdir -p /home/vps/public_html
+wget -O /home/vps/public_html/index.php "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian9/main/Res/Panel/index.php"
+sed -i 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/7.3/fpm/pool.d/www.conf
+service php7.3-fpm restart
 /etc/init.d/nginx restart
 
 # Install Badvpn
@@ -278,6 +282,32 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dr
 wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 
+# install ddos deflate
+cd
+apt-get -y install dnsutils dsniff
+wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian9/main/Res/DDOS/ddos-deflate-master.zip
+unzip ddos-deflate-master.zip
+cd ddos-deflate-master
+./install.sh
+rm -rf /root/ddos-deflate-master.zip
+
+# OpenVPN monitoring
+apt-get install -y gcc libgeoip-dev python-virtualenv python-dev geoip-database-extra uwsgi uwsgi-plugin-python
+wget -O /srv/openvpn-monitor.tar "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian9/main/Res/Panel/openvpn-monitor.tar"
+cd /srv
+tar xf openvpn-monitor.tar
+cd openvpn-monitor
+virtualenv .
+. bin/activate
+pip install -r requirements.txt
+wget -O /etc/uwsgi/apps-available/openvpn-monitor.ini "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian9/main/Res/Panel/openvpn-monitor.ini"
+ln -s /etc/uwsgi/apps-available/openvpn-monitor.ini /etc/uwsgi/apps-enabled/
+
+# GeoIP For OpenVPN Monitor
+mkdir -p /var/lib/GeoIP
+wget -O /var/lib/GeoIP/GeoLite2-City.mmdb.gz "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian9/main/Res/Panel/GeoLite2-City.mmdb.gz"
+gzip -d /var/lib/GeoIP/GeoLite2-City.mmdb.gz
+
 # Block Torrents
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
@@ -294,9 +324,6 @@ iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
-
-# Clear Logs
-echo "0 0 * * * root /usr/bin/clear-log" > /etc/cron.d/clear_logs
 
 # Purge Unnecessary Files
 apt -y autoclean
@@ -316,6 +343,7 @@ wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resourc
 cd
 chown -R www-data:www-data /home/vps/public_html
 /etc/init.d/nginx start
+service php7.3-fpm restart
 /etc/init.d/openvpn restart
 /etc/init.d/cron restart
 /etc/init.d/ssh restart
@@ -323,6 +351,8 @@ chown -R www-data:www-data /home/vps/public_html
 /etc/init.d/fail2ban restart
 /etc/init.d/webmin restart
 /etc/init.d/stunnel4 restart
+service uwsgi restart
+systemctl daemon-reload
 /etc/init.d/squid restart
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
