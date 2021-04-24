@@ -295,50 +295,8 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 
-# Download Script
-cd /usr/bin
-wget -O addhost "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/addhost.sh"
-wget -O about "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/about.sh"
-wget -O menu "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/menu.sh"
-wget -O usernew "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/trial.sh"
-wget -O deluser "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/deluser.sh"
-wget -O users "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/users.sh"
-wget -o webmin "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/webmin.sh"
-wget -O delete "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/delete.sh"
-wget -O cek "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/cek.sh"
-wget -O restart "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/restart.sh"
-wget -O speedtest "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/info.sh"
-wget -O ram "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/ram.sh"
-wget -O renew "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/renew.sh"
-wget -O autokill "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/ceklim.sh"
-wget -O autokillssh "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/tendang.sh"
-wget -O clear-log "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/clear-log.sh"
-
 # Clear Logs
 echo "0 0 * * * root /usr/bin/clear-log" > /etc/cron.d/clear_logs
-# Script Permissions
-chmod +x addhost
-chmod +x menu
-chmod +x usernew
-chmod +x trial
-chmod +x deluser
-chmod +x users
-chmod +x delete
-chmod +x webmin
-chmod +x cek
-chmod +x restart
-chmod +x speedtest
-chmod +x info
-chmod +x about
-chmod +x autokill
-chmod +x autokillssh
-chmod +x ceklim
-chmod +x ram
-chmod +x renew
-chmod +x clear-log
 
 # Purge Unnecessary Files
 apt -y autoclean
@@ -348,10 +306,16 @@ apt-get -y --purge remove apache2*;
 apt-get -y --purge remove bind9*;
 apt-get -y remove sendmail*
 
+# Stop Nginx Port 80
+service nginx stop
+
+# Install V2ray
+wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Services/ins-vt.sh && chmod +x ins-vt.sh && sed -i -e 's/\r$//' ins-vt.sh && screen -S v2ray ./ins-vt.sh
+
 # Restarting Services
 cd
 chown -R www-data:www-data /home/vps/public_html
-/etc/init.d/nginx restart
+/etc/init.d/nginx start
 /etc/init.d/openvpn restart
 /etc/init.d/cron restart
 /etc/init.d/ssh restart
@@ -368,4 +332,3 @@ screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
 history -c
 echo "unset HISTFILE" >> /etc/profile
 cd
-rm -f /root/ssh-vpn.sh
