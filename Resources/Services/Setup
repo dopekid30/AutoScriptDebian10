@@ -100,9 +100,9 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/nginx.conf"
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/vps.conf"
-wget -O /etc/nginx/conf.d/monitoring.conf "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian9/main/Res/Other/monitoring.conf"
+wget -O /etc/nginx/conf.d/monitoring.conf "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/monitoring.conf"
 mkdir -p /home/vps/public_html
-wget -O /home/vps/public_html/index.php "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian9/main/Res/Panel/index.php"
+wget -O /home/vps/public_html/index.php "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Panel/index.php"
 sed -i 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/7.3/fpm/pool.d/www.conf
 service php7.3-fpm restart
 /etc/init.d/nginx restart
@@ -295,7 +295,7 @@ wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resourc
 # install ddos deflate
 cd
 apt-get -y install dnsutils dsniff
-wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian9/main/Res/DDOS/ddos-deflate-master.zip
+wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/DDOS/ddos-deflate-master.zip
 unzip ddos-deflate-master.zip
 cd ddos-deflate-master
 ./install.sh
@@ -303,19 +303,19 @@ rm -rf /root/ddos-deflate-master.zip
 
 # OpenVPN monitoring
 apt-get install -y gcc libgeoip-dev python-virtualenv python-dev geoip-database-extra uwsgi uwsgi-plugin-python
-wget -O /srv/openvpn-monitor.tar "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian9/main/Res/Panel/openvpn-monitor.tar"
+wget -O /srv/openvpn-monitor.tar "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Panel/openvpn-monitor.tar"
 cd /srv
 tar xf openvpn-monitor.tar
 cd openvpn-monitor
 virtualenv .
 . bin/activate
 pip install -r requirements.txt
-wget -O /etc/uwsgi/apps-available/openvpn-monitor.ini "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian9/main/Res/Panel/openvpn-monitor.ini"
+wget -O /etc/uwsgi/apps-available/openvpn-monitor.ini "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Panel/openvpn-monitor.ini"
 ln -s /etc/uwsgi/apps-available/openvpn-monitor.ini /etc/uwsgi/apps-enabled/
 
 # GeoIP For OpenVPN Monitor
 mkdir -p /var/lib/GeoIP
-wget -O /var/lib/GeoIP/GeoLite2-City.mmdb.gz "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian9/main/Res/Panel/GeoLite2-City.mmdb.gz"
+wget -O /var/lib/GeoIP/GeoLite2-City.mmdb.gz "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Panel/GeoLite2-City.mmdb.gz"
 gzip -d /var/lib/GeoIP/GeoLite2-City.mmdb.gz
 
 # Block Torrents
