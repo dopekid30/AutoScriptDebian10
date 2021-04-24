@@ -1,5 +1,6 @@
 #!/bin/bash
-#TEST SCRIPT
+#VPS Script By   : Dope-Kid
+#Contact Me FB   : https://www.facebook.com/joash.singh.90
 
 # Check Root
 if [ "${EUID}" -ne 0 ]; then
