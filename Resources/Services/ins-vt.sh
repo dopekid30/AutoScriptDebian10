@@ -505,41 +505,4 @@ systemctl enable v2ray@trojan.service
 systemctl start v2ray@trojan.service
 systemctl restart v2ray
 systemctl enable v2ray
-cd /usr/bin
-wget -O addws "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/addws.sh"
-wget -O addvless "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/addvless.sh"
-wget -O addtr "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/addtr.sh"
-wget -O delws "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/delws.sh"
-wget -O delvless "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/delvless.sh"
-wget -O deltr "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/deltr.sh"
-wget -O cekws "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/cekws.sh"
-wget -O cekvless "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/cekvless.sh"
-wget -O cektr "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/cektr.sh"
-wget -O renewws "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/renewws.sh"
-wget -O renewvless "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/renewvless.sh"
-wget -O renewtr "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/renewtr.sh"
-wget -O xp-ws "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/xp-ws.sh"
-wget -O xp-tr "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/xp-tr.sh"
-wget -O xp-vless "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/xp-vless.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/certv2ray.sh"
-chmod +x addws
-chmod +x addvless
-chmod +x addtr
-chmod +x delws
-chmod +x delvless
-chmod +x deltr
-chmod +x cekws
-chmod +x cekvless
-chmod +x cektr
-chmod +x renewws
-chmod +x renewtr
-chmod +x renewvless
-chmod +x xp-ws
-chmod +x xp-tr
-chmod +x xp-vless
-chmod +x certv2ray
-cd
 mv /root/domain /etc/v2ray
-echo "0 0 * * * root xp-ws" >> /etc/crontab
-echo "0 0 * * * root xp-tr" >> /etc/crontab
-echo "0 0 * * * root xp-vless" >> /etc/crontab
