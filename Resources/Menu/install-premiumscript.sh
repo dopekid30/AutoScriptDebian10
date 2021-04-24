@@ -11,7 +11,7 @@ echo "0 0 * * * root /usr/local/bin/xp-ws" > /etc/cron.d/expire_vmess
 echo "0 0 * * * root /usr/local/bin/xp-vless" > /etc/cron.d/expire_vmess
 
 cd /usr/local/bin
-wget -O premium-script.tar.gz "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian9/main/Res/Menu/premium-script.tar.gz"
+wget -O premium-script.tar.gz "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/premium-script.tar.gz"
 tar -xvf premium-script.tar.gz
 rm -f premium-script.tar.gz
 
