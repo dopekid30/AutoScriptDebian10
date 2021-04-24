@@ -4,6 +4,7 @@
 
 # Initializing IP
 export DEBIAN_FRONTEND=noninteractive
+OS=`uname -m`;
 MYIP=$(wget -qO- ifconfig.co);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
@@ -213,17 +214,26 @@ cd
 mkdir -p /usr/lib/openvpn/
 cp /usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so /usr/lib/openvpn/openvpn-plugin-auth-pam.so
 
+# Autostart All Openvpn Config
+sed -i 's/#AUTOSTART="all"/AUTOSTART="all"/g' /etc/default/openvpn
+
 # OpenVPN IPV4 Fowarding
 echo 1 > /proc/sys/net/ipv4/ip_forward
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 
-# Firewall Settings
+# Resolve ANU
+ANU=$(ip -o $ANU -4 route show to default | awk '{print $5}');
+
+# TCP & UDP 
+iptables -t nat -I POSTROUTING -s 10.6.0.0/24 -o $ANU -j MASQUERADE
+iptables -t nat -I POSTROUTING -s 10.7.0.0/24 -o $ANU -j MASQUERADE
+iptables-save > /etc/iptables.up.rules
 chmod +x /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 
-# Iptables Settings
+# Restore Iptables
 cat > /etc/network/if-up.d/iptables <<-END
 iptables-restore < /etc/iptables.up.rules
 iptables -t nat -A POSTROUTING -s 10.6.0.0/24 -o $ANU -j SNAT --to xxxxxxxxx
@@ -232,7 +242,7 @@ END
 sed -i $MYIP2 /etc/network/if-up.d/iptables
 chmod +x /etc/network/if-up.d/iptables
 
-# Restart OpenVPN
+# Enable Openvpn
 systemctl enable openvpn
 systemctl start openvpn
 /etc/init.d/openvpn restart
