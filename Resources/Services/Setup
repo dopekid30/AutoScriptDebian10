@@ -206,10 +206,10 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 
 # Install OpenVPN
 apt -y install openvpn iptables iptables-persistent -y
-wget -O /etc/openvpn/vpn.zip "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/vpn.zip"
+wget -O /etc/openvpn/openvpn.zip "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/openvpn.zip"
 cd /etc/openvpn/
-unzip vpn.zip
-rm -f vpn.zip
+unzip openvpn.zip
+rm -f openvpn.zip
 cd
 mkdir -p /usr/lib/openvpn/
 cp /usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so /usr/lib/openvpn/openvpn-plugin-auth-pam.so
