@@ -290,9 +290,8 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dr
 
 # Update BBR
 wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/bbr.sh && chmod +x bbr.sh && ./bbr.sh
-wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Other/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 
-# install ddos deflate
+# Install DDOS
 cd
 apt-get -y install dnsutils dsniff
 wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/DDOS/ddos-deflate-master.zip
@@ -301,7 +300,7 @@ cd ddos-deflate-master
 ./install.sh
 rm -rf /root/ddos-deflate-master.zip
 
-# OpenVPN monitoring
+# OpenVPN Monitoring
 apt-get install -y gcc libgeoip-dev python-virtualenv python-dev geoip-database-extra uwsgi uwsgi-plugin-python
 wget -O /srv/openvpn-monitor.tar "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Panel/openvpn-monitor.tar"
 cd /srv
