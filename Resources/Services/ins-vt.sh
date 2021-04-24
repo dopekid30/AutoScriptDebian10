@@ -390,96 +390,6 @@ cat> /etc/v2ray/vnone.json << END
   }
 }
 END
-cat> /etc/v2ray/trojan.json <<END
-{
-  "log": {
-    "access": "/var/log/v2ray/trojan.log",
-    "error": "/var/log/v2ray/error.log",
-    "loglevel": "info"
-  },
-  "inbounds": [
-    {
-      "port": 6443,
-      "protocol": "trojan",
-      "settings": {
-        "clients": [
-          {
-            "password": "${uuid}"
-#tls
-          }
-        ],
-        "fallbacks": [
-          {
-            "dest": 80
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "tls",
-        "tlsSettings": {
-          "certificates": [
-            {
-              "certificateFile": "etc/v2ray/v2ray.crt",
-              "keyFile": "/etc/v2ray/v2ray.key"
-            }
-          ],
-          "alpn": [
-            "http/1.1"
-          ]
-        },
-        "sockopt": {
-          "mark": 0,
-          "tcpFastOpen": true
-        }
-      },
-      "domain": "$domain"
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "freedom",
-      "settings": {}
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {},
-      "tag": "blocked"
-    }
-  ],
-  "routing": {
-    "rules": [
-      {
-        "type": "field",
-        "ip": [
-          "0.0.0.0/8",
-          "10.0.0.0/8",
-          "100.64.0.0/10",
-          "169.254.0.0/16",
-          "172.16.0.0/12",
-          "192.0.0.0/24",
-          "192.0.2.0/24",
-          "192.168.0.0/16",
-          "198.18.0.0/15",
-          "198.51.100.0/24",
-          "203.0.113.0/24",
-          "::1/128",
-          "fc00::/7",
-          "fe80::/10"
-        ],
-        "outboundTag": "blocked"
-      },
-      {
-        "type": "field",
-        "outboundTag": "blocked",
-        "protocol": [
-          "bittorrent"
-        ]
-      }
-    ]
-  }
-}
-END
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 5443 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6443 -j ACCEPT
@@ -501,8 +411,6 @@ systemctl enable v2ray@vless.service
 systemctl start v2ray@vlessservice
 systemctl enable v2ray@vnone.service
 systemctl start v2ray@vnone.service
-systemctl enable v2ray@trojan.service
-systemctl start v2ray@trojan.service
 systemctl restart v2ray
 systemctl enable v2ray
 mv /root/domain /etc/v2ray
