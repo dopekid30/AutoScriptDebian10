@@ -43,12 +43,39 @@ echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
 echo "$host" >> /root/domain
 
 # Install SSH/OVPN
-wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Services/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Services/Setup && chmod +x Setup && screen -S Setup ./Setup
+
+# Install Script
+# download script
+cd
+wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/install-premiumscript.sh -O - -o /dev/null|sh
+
+# Restarting Services
+chown -R www-data:www-data /home/vps/public_html
+/etc/init.d/nginx start
+service php7.3-fpm restart
+/etc/init.d/openvpn restart
+/etc/init.d/cron restart
+/etc/init.d/ssh restart
+/etc/init.d/dropbear restart
+/etc/init.d/fail2ban restart
+/etc/init.d/webmin restart
+/etc/init.d/stunnel4 restart
+service uwsgi restart
+systemctl daemon-reload
+/etc/init.d/squid restart
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
 
 # Remove Installation Files
-rm -f /root/ssh-vpn.sh
+rm -f /root/Setup
 rm -f /root/ins-vt.sh
+
+# Finishing
 history -c
+echo "unset HISTFILE" >> /etc/profile
+cd
 
 # Script Information
 echo "1.1" > /home/ver
@@ -93,4 +120,4 @@ echo "--------------------------------------------------------------------------
 echo "" | tee -a log-install.txt
 echo "==============================-==================-==============================" | tee -a log-install.txt
 echo ""
-rm -f setup.sh
+rm -f Debian10
