@@ -6,9 +6,8 @@ cd
 echo "0 0 * * * root /usr/local/bin/user-expire" > /etc/cron.d/user_expire
 echo "0 0 * * * root /usr/local/bin/delete-expired" > /etc/cron.d/delete_expired
 echo "0 0 * * * root /usr/local/bin/reset-panel" > /etc/cron.d/reset_panel
-echo "0 0 * * * root /usr/local/bin/clear-log" > /etc/cron.d/clear_log
 echo "0 0 * * * root /usr/local/bin/xp-ws" > /etc/cron.d/expire_vmess
-echo "0 0 * * * root /usr/local/bin/xp-vless" > /etc/cron.d/expire_vmess
+echo "0 0 * * * root /usr/local/bin/xp-vless" > /etc/cron.d/expire_vless
 
 cd /usr/local/bin
 wget -O premium-script.tar.gz "https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Resources/Menu/premium-script.tar.gz"
@@ -41,8 +40,6 @@ chmod +x /usr/local/bin/ram
 chmod +x /usr/local/bin/edit-port
 chmod +x /usr/local/bin/auto-reboot
 chmod +x /usr/local/bin/log-install
-chmod +x /usr/local/bin/simple-panel
-chmod +x /usr/local/bin/auto-reboot
 chmod +x /usr/local/bin/simple-panel
 chmod +x /usr/local/bin/v2ray-cert
 chmod +x /usr/local/bin/about
