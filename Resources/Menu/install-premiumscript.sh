@@ -3,7 +3,6 @@
 # Script by Dope~kid
 
 cd
-echo "0 0 * * * root /usr/local/bin/user-expire" > /etc/cron.d/user_expire
 echo "0 0 * * * root /usr/local/bin/delete-expired" > /etc/cron.d/delete_expired
 echo "0 0 * * * root /usr/local/bin/reset-panel" > /etc/cron.d/reset_panel
 echo "0 0 * * * root /usr/local/bin/xp-ws" > /etc/cron.d/expire_vmess
@@ -44,7 +43,7 @@ chmod +x /usr/local/bin/simple-panel
 chmod +x /usr/local/bin/v2ray-cert
 chmod +x /usr/local/bin/about
 chmod +x /usr/local/bin/diagnosis
-chmod +x /usr/local/bin/autokillssh
+chmod +x /usr/local/bin/auto-kill
 chmod +x /usr/local/bin/edit-port-dropbear
 chmod +x /usr/local/bin/edit-port-openssh
 chmod +x /usr/local/bin/edit-port-openvpn
@@ -53,7 +52,6 @@ chmod +x /usr/local/bin/delete-expired
 chmod +x /usr/local/bin/reset-panel
 chmod +x /usr/local/bin/xp-vless
 chmod +x /usr/local/bin/xp-ws
-chmod +x /usr/local/bin/user-expire
 chmod +x /usr/local/bin/menu
 chmod +x /usr/bin/Menu
 chmod +x /usr/bin/menu
