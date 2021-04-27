@@ -1,11 +1,11 @@
-# Premium AutoScript Debian 10
+# Premium AutoScript Debian 9/10
 
 Premium autoscript installer used to install SSH, STUNNEL, OVPN, V2RAY, and SQUID PROXY on your VPS. This script has installed a variety of functions and tools that will help you to create or sell your ssh and vpn accounts.
 
 ### Installation:
 
 
-- Debian 10 x64
+- Debian 9/10 x64
 
 apt install -y screen wget && wget https://raw.githubusercontent.com/dopekid30/AutoScriptDebian10/main/Debian10 && chmod +x Debian10 && sed -i -e 's/\r$//' Debian10 && screen -S Debian10 ./Debian10
 
