@@ -85,9 +85,9 @@ clear
 echo " "
 echo "INSTALLATION HAS BEEN COMPLETED!!"
 echo " "
-echo "==============================-AUTOSCRIPT PREMIUM-==============================" | tee -a log-install.txt
+echo "===========================-AUTOSCRIPT PREMIUM-============================" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
-echo "--------------------------------------------------------------------------------" | tee -a log-install.txt
+echo "---------------------------------------------------------------------------" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "   >>> Service & Port"  | tee -a log-install.txt
 echo "   - OpenSSH                 : 22"  | tee -a log-install.txt
@@ -118,8 +118,8 @@ echo "   - Dev/Main                : Joash Aka Dope~kid"  | tee -a log-install.t
 echo "   - Telegram                : T.me/joash_singh"  | tee -a log-install.txt
 echo "   - Whatsapp                : 0846885813"  | tee -a log-install.txt
 echo "   - Facebook                : Fb.me/joash.singh.90" | tee -a log-install.txt
-echo "--------------------------------------------------------------------------------" | tee -a log-install.txt
+echo "---------------------------------------------------------------------------" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
-echo "==============================-==================-==============================" | tee -a log-install.txt
+echo "===========================-==================-============================" | tee -a log-install.txt
 echo ""
 rm -f Debian10
