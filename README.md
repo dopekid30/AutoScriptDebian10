@@ -68,9 +68,9 @@ apt install -y screen wget && wget https://raw.githubusercontent.com/dopekid30/A
 
 
 ### V2ray INFO
-V2ray TLS Uses CloudFlare Domain
-Enter Cloudflare Domain With VPS IP
-In Begging Of Script Or Click Enter 
+V2ray TLS Uses Cloudflare Domain 
+Make Domain With VPSIP On Cloudflare
+Enter Domain On Script Install
 
 ### Need Script Access ?
 Digital Ocean | Linode VPS Recommended
