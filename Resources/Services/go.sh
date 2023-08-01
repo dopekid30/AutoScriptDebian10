@@ -1,4 +1,516 @@
 #!/bin/bash
-#Script by DopeKid
-#Contact https://www.facebook.com/joash.singh.90
-WWywSUXJzxnCIuxqUxJUiEyWSzguObgnJNXAkkiDoSfzmcWmyWQoTifMAWlMgdnKPVEPHGQbmmZrwdoPvcLDxpXcSBTAnHjeyEDm="YyUZCpmjUUDqzCBGXDKDbQOMFZQajMGoWankRFuBIGsalIZlFcKbmFnOdwBHVTPJTqQPwSMvljmttKaBneCIzqnkLuAfPZMOCIGS";LUhnlWSYvTgofAYHJlzVUpPKhbeVlcjzkNeTSjuYSifShGOuHeplSBxJbFhRbOAKrLcnnbXvRDsHnEFourBDLUNKKGKUXeBTgMav="VrmtHCjnEOvhgRBCgVuhFvIUYBfmAfafelghhSvZVZGcKyYxEghQmsuDpvKhCKJgBYTLTQjMVuwThTeaNRdgakYFHBlNwiYyqWCN";emgHUyLiAbZRUJDHGnyPsBCkWlLpkZLSnannPzjSuGZNnRBbNKGkPQakkVAHSziYlSbQUlJjMjMxdXtNjnEfcYkEsqvSqVqZFeWL="ch";zbIDbTwTSOQnAqrIYFlXliGsvoEWEwRrtaWhDGgcVsGnbbRgNvNcIUvEuVkxdPDcyoqRicVvCFoiscckutJmXdKeTTrbNDwgmrUm="4";gNhixanTAFKOiwmCYVisjNwhApzOQXtvOHBBMbkOZXvtNYSFhtjyaMefdRPeTLMEIDSOcBQYOgLGlDcZAVIVOdzBpJiYLthjdoip="";GWvFLZnOgsArGoTfMrkbhlfByEgLvIQMjzRBwwDSsDHgQsaFBXQVhFzgqLWdJecSlFknuvDClmVWRexTrECFSGamOYocawmQaibe="ivEEMIMXLjuEYTxUlzwJHBGpLmCkrdeWsRcIqtpqKrzDpYMDGcOJjxRNqTLkMgqwTHQZhBJNftoyvpJyTzfKsrScBioOPngBeKWq";wSHQhvKdJLGkKDtjmwOfoVKysklzSAnpJkKkZTkgDObGNeACWeuxNTppZSDoYTcZNFnIPOWoEahyMEGeHctQfXEpfoQAwaJLEEBO=" ==gbpFWbKoQfKADIuJXd0VmcgACIgoQehJnM29CctR3LgYmctASbyBCIgAiCi4CZlxGbhR3culGIzlGI9JVRW91VF50ekASehJlMWJCI95URFJ1R7RCIvh2YFJ3bs92YgACIgoQamBCIgAiC5FmcyYFdyFGdzBCIgACIgACIKIiLlNWa2JXZzBSehJlMWByZulGdyFGdzVmUiASfFVFTCtHJg8GajVkcvx2bjBCIgACIgACIK4WZoR3Od1FIxAScl1CI9dkTJ5kTVJ1XZFkUyY1ekAyWbBiZpBCIgAiC/QCIuJXd0VmcgwHfgISfU90TSBVSatHJiAiI9VETJZEUJp1ekICI0BXayN2U0lmbJxGbhR3culGIgACIK8DJg4mc1RXZyBCf8BiI9R1TPJFUJp1ekICIi0XRMlkRQlkW7RiIgkXYSJjVsxWY0NnbpBCIgAiCpZGIgACIKkXYyJjVw9GdzBCIgACIgACIKETPH5USO5UVS9VWBJlMWBCIgACIgACIK4WZoRHI7ACbsVnbvYXZk9CI+AiI5FmcyYnIgAXZydGcgYWagACIgogCpZGIgACIKkmZgACIgACIgAiCyAibyVHdlJHIgACIgACIgACIgAiCi4SehJlMWBCdjFmc0hXZg8GdgQWZslWYGJCI9RURStHJg8GajVkcvx2bjBCIgACIgACIgACIgoQZzxWZgACIgACIgAiCwAibyVHdlJHIgACIgACIgACIgAiCi4iLucmbpRXa4VGIk5WYgwSf99SJU90TSBVSatHJvsiOU90TSBVSatHJ99SJU90TS91QSNlV7RCIvRHIkVGdjFmc0hXZgkXYSJjViASfOVURSd0ekAyboNWRy9GbvNGIgACIgACIgACIgAiCuVGa0ByO9R1TPJ1XDJ1UWtHJgQWLgISfFxUSGBVSatHJiAybtACcppnb1BiZpBCIgACIgACIKogIu0HVP9kUfNkUTZ1ekAyb0BSZnF2ajFGcgkXYSJjVgcmbpR3YhJHd4VkIg0XRVxkQ7RCIvh2YFJ3bs92YgACIgACIgAiCuVGa0ByOdBiI9lFTO90XUNUQSRFWFtHJiAibtAyWgYWagACIgogC/QCIuJXd0VmcgwHfgAXa65WdgUmchdHdm92UsxWY0NnbpBCIgAiCikiI9VETJZEUJp1ekICI092bSBXa6hCJi0DVP9kUQlkWgwWYj9GbgACIgogCpZGIgACIKkmZgACIgACIgAiC/QCIuJXd0VmcgwHfgkXYSJjVkF2bs52dvRGIgACIgACIgACIgAiCi0HSDJVQ7RCIu9GI9JVRW91VF50ekASehJlMWByZulGbsFGdz5WSiASfFVFTCtHJg8GajVkcvx2bjBCIgACIgACIgACIgoQZzxWZgACIgACIgAiCzAibyVHdlJHIgACIgACIgACIgAiCuVGa0ByOd1FIzASP9ACTBZFVFJFJgs1WgYWasVGIgACIgACIgogbyVHdlJHIgACIgACIgACIgAiCpZGIgACIgACIgACIgAiCwEDIuJXd0VmcgACIgACIgACIgACIgAiCuVGa0ByOdBiI9VEVBR0TUBVVfZUSfJ1TSJVR7RiIg4WLgsFImlGIgACIgACIgACIgAiCi4CZlxGbhR3culGI5RWYlJHbhBycpBSfSVkVfJVVDtHJg42bpNnclZHI0NXZ0FGTiASfFVFTCtHJg8GajVkcvx2bjBCIgACIgACIgACIgogblhGdgsTXdBiIxICI9ECIiU0QS9kRkICIbtFImYCId1FIwASP9ACTBZFVFJFJgs1WgYWagACIgACIgAiCi8DJi0DTBZFVFJFIgACIgACIgogbvl2cyVmV0V2ZgACIgACIgAiC/QCIuJXd0VmcgwHfgICbyV3YiASZyF2d0Z2bTxGbhR3culGIgACIgACIgoAdjFmc0hXZgQmbhByay92d0VmbgEWa2BCZh9Gbud3bkByIgACIgACIgAiClNHblBCIgAiCpZ2IgACIgACIgAiCgJjZtAiItICIk1CI0V3Y8BidtkXYyJjdgAXZydGfgkXYyJjdvAXb09CIzxGY9IVRW91VF5EIgACIjACIgACIgACIKU2csV2IgACIgACIgAiCxAibyVHdlJHIgACIjACIgACIgACIKIiLtVGdzl3cg0HSDJVQ7RCIulGIkVGbsFGdz5WagUmYgQ3buBibhNGI5FmUyYFIsF2YvxGIlhGViASfEVkU7RCIvh2YFJ3bs92YgACIgMCIgACIgACIgogblhGdgsTXdBSfTlERWtHJg0TIg03UJRkVFxUSGtHJgs1WgYWasV2IgACIgACIgAiCxAibyVHdlJHIgACIjACIgACIgACIKIiL4VnbpxGIulGIkVGbsFGdz5WagUmYgQ3buBibhNGI5FmUyYFIsF2YvxGIlhGViASfEVkU7RCIvh2YFJ3bs92YgACIgMCIgACIgACIgogblhGdgsTXdBiI4VnbpxmIg0TIg0XTFR1UZN1ekAyWbBiZpNCIgACIgACIgoAYzYWLgISLiACZtACd1NGfgYXL5FmcyYHIwVmcnxHI5FmcyY3Lw1GdvAycsBWPNVEVTl1UjACIgACIgACIKAGNm1CIi0iIgQWLgQXdjxHI21SehJnM2BCclJ3Z8BSehJnM29CctR3LgMHbg1zUJRkVFxUSGNCIgACIgACIgogIMF0QPxEJi0TRMlkRQlkWgACIgACIgAiC5FmcyY3Lw1GdvAiZy1CItJHIgACIgACIgoAbhN2bs1jUFZ1XXVkTgACIgACIgAiCi4CdhhGdgUmbp1mclRXZkByb0BSZsJWYgQ3buBSZyFGIldHIzFGIsU2Zht2YhBHI5FmUyYFIklGbhZHIhBycpBSZslmZgUGa0BSZyV3cgU2ah1GIlNXYlxGUg4SZslmZgwWYj9GbgEWa2BSehJlMWByZulGbsFGdz5WSiASfX9ETMVUW7RCIvh2YFJ3bs92YgACIgACIgAiCuVGa0ByOd1FIxAScl1CIMxUQUNlTJ9FTBN0TMRCIbtFImlGIgACIKUGbpZGIsF2YvxGI0NWYyRHelByIgACIgogCikCepZmZBh2YyFGKkISPTlERWBCIgAiCp0WLgUWbh5WdoQSPINkUBBCbhN2bsBCIgAiCK4mc1RXZyBiJmASZ29WblJHImYCId1FIiEjIg0TPgISRW9UTFJFJiAyWbBCIgAiCuJXd0VmcgYiJgUGdhRGcVt2Ylh2YgYiJg0VXgISMiASP9AiILNURINEJiAyWbBCIgAiCuJXd0VmcgYiJgAHblhEImYCId1FIiEjIg0TPgICUMVESkICIbtFIgACIK42bpRXYtJ3bm5WagcmbpBHblh2IgACIgowepgibpFWbKoQfKADIuJXd0VmcgACIgoQamBCIgAiCi4SfSVkVfdVROtHJgMXagkXYSJjVgI3bmBibvl2cyVmdgQ3cldXZuBSZoRlIg0XRVxkQ7RCIvh2YFJ3bs92YgACIgACIgAiCi4CZlxGbhR3culGI5FmUyYFIv5kIg03VPxETFl1ekAyboNWRy9GbvNGIgACIgACIgogblhGdgsTXdBiMgEXZtACTBZFVFJFJgs1WgYWasVGIgACIKIiL9JVRW91VF50ekAycpBibvl2cyVmdgQnblJnc1NEIu42bpNnclZHI3Vmbg8mTiASfFVFTCtHJg8GajVkcvx2bjBCIgACIgACIK4WZoRHI70VXgADIxVWLgwUQWRVRSRCIbtFImlGblBCIgAiCikiUFZ1XSV1Qkojbvl2cyVmdgQnblJnc1NEKukXYSJjVgI3bmBSfSVkVfdVROtHJg42bpNnclZHI3VmbgQmb19mRiASfFVFTCtHJg8GajVkcvx2bjBCIgACIgACIK4WZoRHI70VXgEDIxVWLgwUQWRVRSRCIbtFImlGIgACIKIyPkISPMFkVUVkUgACIgogbvl2cyVmV0V2ZgACIgogIi0jTPl0USVkVgACIgogIuUGdhRGc1BicvZGIn5WarNWZoNkIg8GajVGIgACIKsXKoUGdhRGcVt2Ylh2YKoQfKkmZgACIgoAMg4mc1RXZyBCIgACIgACIKIiLk5WdvZGI09mbgkXYSJjViASfX9ETMVUW7RCIvh2YFJ3bs92YgACIgACIgAiClNHblBCIgAiCpZGIgACIgACIgoAMg4mc1RXZyBCIgACIgACIgACIgogIukHbsFWduFWbgUGbpZGIn9GbgQmbhBSZslmZg42bpRXYyV3ZpZmbvNGIlZ3btVmcgU2chVGbwBCL5JXYzNXZjVmbgYWSiASfFVFTCtHJg8GajVkcvx2bjBCIgACIgACIgACIgogIukHbsVnZzNXZjNWdzBSehJlMWBCZlZ3btVmUiASfOVURSd0ekAyboNWRy9GbvNGIgACIgACIgACIgAiClNHblBCIgACIgACIKADIuJXd0VmcgACIgACIgACIgACIKIiL5FmUyYFIlZ3btVmcg8GdgQWZslWYGJCI9RURStHJg8GajVkcvx2bjBCIgACIgACIgACIgogblhGdgsTXdBCMgUmbtAyPkAyWbBiZpBCIgACIgACIKISehJnM29CZuQXaul2LjRXZvICIikXYyJjdv4Wai9iczV3LiAiZy1CItJHIgACIgACIgoQamBCIgACIgACIKkXYyJjVw9GdzBCIgACIgACIgACIgogblhGdgsDIsxWdu9idlR2Lg4DIikXYyJjdiACclJ3ZwBiZpBCIgACIgACIK4WZoRHI70VXgISehJnM29CZuQXaul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VRWRiIg8GajVGKkICIu9WazJXZWVmepxWYtJ3buhCJi0jUFZ1XSV1QgACIgACIgAiC/QSPMFkVUVkUgACIgACIgAiCikCbsVnbvYXZk9iPyAibvl2cyVmdtASehJnM29SehJnM29ibpJ2LyNXdvgCJi0jUFZFIgACIgACIgoQZzxWZgACIgoANg4mc1RXZyBCIgACIgACIKISKi40TJNlUFZFJiAibvl2cyVmVlpXasFWby9mboQiI9IVRW91VF5EIgACIgACIgogblhGdgsTXdBiIO9USTJVRWRiIg4WLgs1WgYWagACIgowepgibvl2cyVmV0V2ZK4yajVGajBCdn42bkBiO0AiLkVGbpFmZgs2Ylh2YgozMg4CZlxGbhR3culGI09mbgojMg4ybuBiOwAiL5FmUyYFI3VmbgoTMgMiCK0nCpZGIgACIKIiIg8GajVGIgACIgACIgoQZzxWZgACIgowYhNXZgACIgACIgAiC7sDIgACIgACIgACIgAiCiEDJ2JCIvh2YlBCIgACIgACIgACIgACIgAiCpoCIgACIgACIgACIgAiC7sDIgACIgACIgACIgAiCiEDJiAyboNWZgACIgACIgACIgACIgACIgoQKqYHIgACIgACIgACIgAiCulGIiEDJiASZzF2YgACIgACIgAiCuVGa0ByOdBiIxQiIg4WLgsFImlGIgACIKsHIpgibvl2cyVmVlpXasFWby9mbKoQfKADIuJXd0VmcgACIgoQamBCIgAiCxAibyVHdlJHIgACIgACIgoQZzxWZgACIgogImVmcgIXZwBXe6JSPFRVQEBVVfRUTDBCIgACIgACIKICbsFGdz5WagkXLgIXZwBXe6JSPMxUQUNlTJ9FRNNEIgACIgACIgogblhGdgsTXdBCYyVGcwlnegYXLgQmbh1WbvNGYg4WLgs1WgYWasVGIgACIKISZoNWYjV2ah1GIx1CItVXei0TRUFERQV1XE10QgACIgACIgAiCiwGbhR3culGIx1CI51CItVXei0DTMFEVT5USfRUTDBCIgACIgACIK4WZoRHI70VXgAWb1lHI21CIk5WYt12bjBGIu1CIbtFImlGblBCIgAiCiUGdhRGc1BScx1CI0V2ZtQHchJSPFRVQEBVVfRUTDBCIgACIgACIKICbsFGdz5WagEXctASetACdldWL0BXYi0DTMFEVT5USfRUTDBCIgACIgACIK4WZoR3Od1FIgRXZn1CdwFGI21CIk5WYt12bjBGIu1CIbtFImlGIgACIKsXKoQVTQRXZnpgclBHc5pHIy9GIs0Wd5BCL0BXYgQ3buBiOxAibyVHdlJHIjogC9pAMg4mc1RXZyBCIgAiCpZGIgACIKEDIuJXd0VmcgACIgACIgAiCi4SesxWY15WYtBCdpBCbsFGdz5WagU2chVGbQBiL9RlTF50TQ10TDtHJgwGbhR3culGIvRHIkVGbpFmRiASfEVkU7RCIvh2YFJ3bs92YgACIgACIgAiCuVGa0ByOd1FIwASZu1CI/QCIbtFImlGIgACIKQlTF50TQ10TDRCIMxUQUNlTJ9FRNNEJgACIgogI9RlTF50TQ10TDtHJgcmbpxGbhR3culkIg0XRVxkQ7RCIvh2YFJ3bs92YgACIgogCpZGIgACIKETPEVEVBREUV9VRSF0VUZ0TTBCIgACIgACIKUEVBREUV9FRNNEJgACIgACIgAiCi8GclJHIlJXY3RnZvNHIn5Wa0FGZwVlIg0XRVxkQ7RCIvh2YFJ3bs92YgACIgACIgAiCuVGa0ByOd1FIwAScl1CIEVEVBREUV9VRSF0VUZ0TTRCIbtFImlGIgACIKkmZgACIgoQMg4mc1RXZyBCIgACIgACIKIiL5xGbhVnbh1GI9RlTF50TQ10TDtHJgwGbhR3culGIlNXYlxGcgwSTVlFIy9GIUBVQgQ3JuNXagw2bvRHIyV2Zh5WYtBSZnF2ajFGcg0WZ0NXezBSZoRlIg0HRFJ1ekAyboNWRy9GbvNGIgACIgACIgogblhGdgsTXdBSMgEXZtAyPkAyWbBiZpBCIgAiCU1EU0V2ZgACIgogCpZGIgACIKADIuJXd0VmcgACIgACIgAiCuVGa0ByOd1FIgRlTF50TQ10TDRCI21CIk5WYt12bjBGIu1CIbtFImlGIgACIKEDJ9QlTF50TQ10TDBCIgAiC7lCKlJXY3RnZvNFbsFGdz5WaKoQfKADIuJXd0VmcgACIgoQamBCIgAiCzAibyVHdlJHIgACIgACIgogIu4WahdWYgknc0BicvByay92d0VmbgIXdvlHIrNWZoNGIlNXYlxGUgECZh9Gbud3bkByb0BCZlxWahZkIg0HRFJ1ekAyboNWRy9GbvNGIgACIgACIgogblhGd70FIwASPhAyPkAyWgYWagACIgoQfL5USM9FRB9ETOd1TEtHJg0XRMlkRQlkW7RCIv1CIiUGajF2Yt8mbgoDbvJHdu92QtUGajF2QiACStACTtASfZh1TSB1ekACbyV3YgACIgogI9tkTJx0XEF0TM50VPR0ekAiO5FmUyYFIn5WakF2bs52dvRkIg0XRVxkQ7RCIvh2YFJ3bs92YgACIgoQamBCIgAiCiAXa65SfTlERWtHJtgXdulGbtkXYyJjdv0nUFZ1XXVkT7RyLkF2bs52dvR2LzV2chVGblJ3LlJ3bj1SehJnM29SesZmM29SbvNmLiVHa0l2Zv8iOzBHd0hmI9skTJx0XEF0TM50VPREIgACIgACIgoQZzxWZgACIgogIwlmeu03UJRkV7RSL4VnbpxWL5FmcyY3L0NXak9SehJnM29Can9Cdl5mLyZXasVGZzpmLuR2Yv8iOzBHd0hmI9skTJx0XEF0TM50VPREIgACIgACIgogblhGdgsTXdBiIyZXasVGZzpmIg0TPgISfDJ1UfR1UJR0ekICIbtFImlGIgACIKkXYyJjdvAXb09CIw1CIylGZr1GIgACIKkXYyJjdvAXb09CImJXLg0mcgACIgowepgSehJlMWRWYvxmb39GZKoQfKcCIgACIK0HIgACIgACIgowO4lmZlJHcgQnbpJHcgACIgACIgACIgACIKsHIE5URgACIgACIgAiC9BCIgACIgACIK0HIgACIgACIgACIgAiC7UGbpZGd4VmbgACIgACIgACIgACIgACIgowOiICI9ACepZWZyBHIgACIgACIgACIgACIgACIKsHIpADI90DIuVGboAiZpBCIgACIgACIgACIgogC9BCIgACIgACIgACIgoQfgACIgACIgACIgACIgACIgowOrFWZyJGIgACIgACIgACIgACIgACIgACIgowO4lmZlJHcfJWdzBSPggXamVmcwBCIgACIgACIgACIgACIgACIgACIKsHIpIXdj9lY1NHI90DI4lmZlJHcfJWdzhCImlGIgACIgACIgACIgACIgACIKowOp4WZsBCLxACL0QCKyR3ciV3cg0DIyV3YfJWdzBCIgACIgACIgACIgACIgAiC7kiblxGIsEDIsgXamVmcwhic0NnY1NHI9ACepZWZyB3XiV3cgACIgACIgACIgACIgACIgowegkSMg0TLg4WZsByOxASP+AiblxGI74WZs9lc1NGI6Aiblx2X4lmZlJHcg8DIuVGbfJXdjBCPg4WZs9FepZWZyBHI9AiblxGKgI3bmBCIgACIgACIgACIgogC7kCNkgCa0dmblxGI9Aiblx2XyV3YgACIgACIgACIgACIKsTK4lmZlJHcogGdn5WZsBSPg4WZs9FepZWZyBHIgACIgACIgACIgAiC7BSMg0TIgIlTgACIgACIgAiC9BCIgACIgACIKsDNkASPggXamVmcwBCIgACIgACIgACIgowegEDI90DIS5EIgACIgACIgowJgUWLgs2dhBCfgISMkICIxFHbtACcppnb1BCIgAiC7BSKoQ3bvJFcppnCK0nCwAibyVHdlJXCKowYhNXZgACIgowO7ACIgACIgACIKEDIuJXd0VmcgACIgACIgACIgACIKkiKgACIgACIgAiC7sDIgACIgACIgowJ0YjdjNXaydCIvh2YlBCIgACIgACIgACIgoQK0YjdjNXayBCIgACIgACIKszOgACIgACIgAiCnQjNjBHcnAyboNWZgACIgACIgACIgACIKkCN2MGcwBCIgACIgACIKszOgACIgACIgAiCnUGb0YzYwB3Jg8GajVGIgACIgACIgACIgAiCpUGb0YzYwBHIgACIgACIgowO7ACIgACIgACIKcCewkzMzdCIvh2YlBCIgACIgACIgACIgoQKqgHM5MzcqACIgACIgACIKszOgACIgACIgAiCnMHcp12Jg8GajVGIgACIgACIgACIgAiCpoycwlWbqACIgACIgACIKszOgACIgACIgAiCnUGbzBXatdCIvh2YlBCIgACIgACIgACIgoQKqUGbzBXatpCIgACIgACIgowO7ACIgACIgACIKcCN2MHcp12Jg8GajVGIgACIgACIgACIgAiCpoCN2MHcp1mKgACIgACIgAiC7sDIgACIgACIgowJlxGN2MHcp12Jg8GajVGIgACIgACIgACIgAiCpoSZsRjNzBXatpCIgACIgACIgowO7ACIgACIgACIKcSY4YXL0YTbyF2Jg8GajVGIgACIgACIgACIgAiCpQjNoNmchFGf4YXbyFGIgACIgACIgowO7ACIgACIgACIKcSY3YXLyMTbyF2Jg8GajVGIgACIgACIgACIgAiCpw2N21mchx3N21mchBCIgACIgACIKszOgACIgACIgAiCnYjdtIzMtJXYnAyboNWZgACIgACIgACIgACIKkCb2YXbyFGIgACIgACIgowO7ACIgACIgACIKcSN21iMz0mchdCIvh2YlBCIgACIgACIgACIgoQKsVGd1YXbyFGIgACIgACIgowO7ACIgACIgACIKcCN2cCIvh2YlBCIgACIgACIgACIgoQK0YDZtFGf0YzX2gDegACIgACIgAiC7sDIgACIgACIgowJyMzJg8GajVGIgACIgACIgACIgAiCpYDOzkGf2gjNpBCIgACIgACIK4WagISfikSbtASZtFmb1hCJi0iOxsHJiASZzF2YgACIgowepgCepZmZBh2YyFmCK0nCyAiJ+EDIi0GMbNzMwwVfyoDQ7RSfxsHJbNzMwwlIgUWLg8GajVGIgACIKsXKo8GajVkcvx2bjpwIjMyIjMyIjMyIjMyIjMyIjMyIjMyIjMyIjMyIjMyIKoQZu9GZKUWdsFmdgI3bgQnbl1WdnJXYgQ3chBHIjACdmlGazBCIgAiCjF2clBCIgAiC7sDIgACIgACIgogbvlGdw9GIud3butmb1ByIgACIgACIgACIgACIgACIgoQKqACIgACIgACIKszOgACIgACIgAiCiEjI9UEVBR0TUBVVfZUSfJ1TSJVRgACIgACIgAiCpUGdhR2b0BXdmlmcyVWLtACIgACIgACIKszOgACIgACIgAiC0ZWaoNHIgACIgACIgogIyQiI9MkUT9FVTlERgACIgACIgAiCpU2YyV3bz1SLgACIgACIgAiC7sDIgACIgACIgoAdmlGazBCIgACIgACIKISMi0DTMFEVT5USfxUQD9ETgACIgACIgAiCiIDJi0DTBN0TMBCIgACIgACIKkCbhN2bs1SL8xWLgACIgACIgAiC7sDIgACIgACIgogIxISPZxkTP9FVDFkUUhVRgACIgACIgAiCpkHbu9GdjFmc0hXZt0CIgACIgACIgowO7ACIgACIgACIKQnZph2cgACIgACIgAiCiIDJi0DVP9kUfNkUTZFIgACIgACIgoQK0NWYyRHel1SLgACIgACIgAiC7sDIgACIgACIgoAdmlGazBCIgACIgACIKIiMkISPO9USTJVRWBCIgACIgACIKkibvl2cyVmdt0CIgACIgACIgowO7ACIgACIgACIKISMi0TRW9UTFJFIgACIgACIgoQKlZ3btVmct0CIgACIgACIgowO7ACIgACIgACIKISMi0zSDVESDBCIgACIgACIKkyajVGaj1SL8NWLgACIgACIgAiC7sDIgACIgACIgogIxISPFNkUPZEIgACIgACIgoQKlNmcvZWLtwnZtACIgACIgACIKszOgACIgACIgAiCiEjI9AFTFhEIgACIgACIgoQKwxWZo1SL8hWLgACIgACIgAiC7sDIgACIgACIgoAduVWb1dmchBCdzFGcgMCI0ZWaoNHIgACIgACIgogI9JzekACetISPZh1TSBFIgACIgACIgoQK5h3byBXLtwHctACIgACIgACIK4WagISMkICIlNXYjBCIgAiCvRGI70VXgADI+AyIkAyWbBSZslGa3pwIjMyIjMyIjMyIjMyIjMyIjMyIjMyIjMyIKogCldWYzNXZtBybm5WSgMCIgACIgISb2MjI9UUVMJkCldWYzNXZtByZulmbyF2VgMCIgAiItNzMi0zVPxETFllCldWYzNXZtByczV2YjV3UgMCIgACIi0mMzISPOVURSdkCldWYzNXZtBicvJncFByIgACIgACIi0WMzISPEVkUKMyIjMyIjMyIlR2bjBicvx2bjNyIjMyIjMiCKkCbsVnbvYXZk9iPyASZjlmdyV2cgYXLgQmbh1WbvNGKk0DRNN0XFNUSWJVRTpQKsxWdu9idlR2L+IDIsR3YtVGdzl3cgYXLgQmbh1WbvNGKk0DRNN0XMR1QNVEVTl1UKoAM9QURUFERQV1XFJVQXRlRPNlCiISPFRVQEBVVfRUTDpgIi0DTMFEVT5USfRUTDpgCw0zROlkTOVlUflVQSJjVKICcppnL5FmcyY3L5FmcyY3Lw1GdvISPFxUSGBVSapwJn0zUJRkVKIiI9IVRW91VF5kCiISPSVkVfJVVDpgCncSPFRVQE9EVQV1XGl0XS9kUSVkCnIWdoRXandSPDJ1UfR1UJRkCncSPMxUQUNlTJ9FTBN0TMpwJn0DTBN0TMpwJn0TWM50TfR1QBJFVYVkCnkXYyJjdvAXb09yJ9Q1TPJ1XDJ1UWpwJn0jTPl0USVkVKcyJ9UkVP1URSpwJn0zSDVESDpwJn0TRDJ1TGpwJn0DUMVESKcyJ9kFWPJFUKg2chJ2LulmYvEyI | r";OPBcTMgWSmRqBgvjcMlTwXBbnwFHdCYeFsxqfrKtUgLdADTzTRqjYgwmocVcduMwSYHVhHwIkpUyWwJprADTkznIShXGRtxVHHoe="ozFQSuRQMskwBqJBVuwdsfUHCPIqJsFkoQzhJKVPTuFdjDfQJCALtuNTcFZgyECPgYLhXIwhXxJBidJRuqgciwkENQbjvRLiWjmd";aIUlDfeEIaKNXcKPidvAlJImqpwQRNlQLHMttpbgFTytcnvZALyeRatXwVhwjbmcIYSTCizPdmZqjKiJKsvMVDdBwdppnRPqwPyd="";sCgxbVmvBtsFDFyyoTWdetygCFPRfZHbundpwbAiBznbgKyqXhvdFoGnwdfrojKkqGLmTbsvBALtKkTJPapcRgamWFiEkeIQGpfp="as";fVElRMYVoEdscVdeXmwQyLAXQRJeJXxKFmblOQJHiuZQbAPWbBCtjkMiPXpxSCRSnlbzskShMBqLSnkUYDYgiQEmJtSFCZTviobE="PbAVoxLWPMDoavIKkQIhJEuCDfJtsgnTCirdDIizFdpeuUfAuJOVPFFbAKhrBycAobhaaDKQjvzRcadwtURJuZmfhYivrDuRBFym";omEgcHccmNJlOKeLwDMNkrpLjnfUCGRZdhnfjHzhbdyPrXDJCfVscrnIgHtSzQhLvAumsTUYPMzVffiFasmQEysVdOdmaNpdKhGG="vgqerIdMRHsleSUHKtOVMJDDjMzKeRpAUDpGtXcqWxyZaxDypvSlkxzaIjCxgSnLyjIFKHuFnnvFZLiideKNzYMlwdWJdEsiyhwr";VDtYNPKkPxRYOauhdBoEeroCWnGxZRrxSedheJRirmAsIDAEUsaXophCIubsLGdrOszMbJnnNwxIrGfBXBumVPcACPztUBqNHfnu="o";HwoNwQLHZXWuPUChnofviuxuTkdGCsgLmEhJyNgjcINkCvuKIFLwfcpjWPOBfpCkvHbUsfEXaMBehSmZAGhcnEPZHLXKMZwCYKoz="6";cKNiwIsGhlnsXINOAeiHrxtbLQgnyfcDpPrHSEGnrviEGTSsjHUkcPhDjjrmEkfJvrPbWuxLwYIMkqMPVKpSPXcGFsADrXvyyVwK="DCzMxXMXWQlZISxTuayOqWEKittMNOvLTIHLJJrdtErTAZGPzQtJXoauyojhISbPBqpwDxQaWhtKWKynOEtIiOPpgOkDvUTNOGxC";avuoKzAMLwOAhSsgpmPIljAinAYfdfauOQglaOcfMGJgEzmTAbJfFDyeazkIwRpyobJodyvCEUWDJSHpqzZLDFrCjKNcPyvpxqSr=" -d";ltlmxDDVqdsMPNNsVyWzqmpuWAbYYrXgRiCqxOYiLcXFjyrRiFwerYPVdtBTzFklioyWiwwvOZeWQLsqXrIaqlrvMwNngIRfsXJJ="ivTbdcEBczzaEMHjgkhrAmACLIdikIfgQqsPsnIYZfDyszmgCwpASxagSpInoLQsIkGboEGNgPHveEZCMDWuwmzSlcsqUKBqNUdW";OpbypKKZATjIHCmRCdwjMwOjTgGfbwbTbQqaqMFVGxSbufyJGaTMhoAFnDTLRyrYWcbMFLgJyfEnVaobMnBXwxZkgmMlpsWarvoA="";DXLRhwUAQwFREkyzbNTnwGOWMamXHejCwKRtGErpjIApNoYJusiUpjCzGjSoPqrdWFdxyASBQMZuBhCvjvqZtAlsZKCYtHQsRMBI="b";mNpOVsAGleCoonsAiqwRRnGFSvIJPqTFDsUoqBDXfVAxMemYktXjufvupEVUtLOXOQzqhubqqHyiSnbmThzAXHGiGwHvSVVyCNop="e";LiNNVHonNMjcsMYOcXMTvbUVoqnyLltqZbzGHuacGpLjylUjnRkRWCIMwdYxyakgWLCyFmHKUjdMTJYrjlQidsETjUMJTHUtmdYR="v |";Tx=Eds;LaTenwAziqAZYuFEEEVllVEJjInDNOEYrAbMJBJvlgzRjbjaTwVWxbstRkKjAzKOOIZDpaBoJYQjpNDlnyQbBnGJNCzvVdGuubzh="";SWyCBARqYqTQnsygstfKLiRfACnSjQxJhhxGBMSEUqVQyFDhgMAUPmNdcuMdCbYlIueWBlVtOVBXfOdBxqBZyqnwDfHYhxxJnNAE=$(eval "$aIUlDfeEIaKNXcKPidvAlJImqpwQRNlQLHMttpbgFTytcnvZALyeRatXwVhwjbmcIYSTCizPdmZqjKiJKsvMVDdBwdppnRPqwPyd$mNpOVsAGleCoonsAiqwRRnGFSvIJPqTFDsUoqBDXfVAxMemYktXjufvupEVUtLOXOQzqhubqqHyiSnbmThzAXHGiGwHvSVVyCNop$emgHUyLiAbZRUJDHGnyPsBCkWlLpkZLSnannPzjSuGZNnRBbNKGkPQakkVAHSziYlSbQUlJjMjMxdXtNjnEfcYkEsqvSqVqZFeWL$gNhixanTAFKOiwmCYVisjNwhApzOQXtvOHBBMbkOZXvtNYSFhtjyaMefdRPeTLMEIDSOcBQYOgLGlDcZAVIVOdzBpJiYLthjdoip$VDtYNPKkPxRYOauhdBoEeroCWnGxZRrxSedheJRirmAsIDAEUsaXophCIubsLGdrOszMbJnnNwxIrGfBXBumVPcACPztUBqNHfnu$wSHQhvKdJLGkKDtjmwOfoVKysklzSAnpJkKkZTkgDObGNeACWeuxNTppZSDoYTcZNFnIPOWoEahyMEGeHctQfXEpfoQAwaJLEEBO$mNpOVsAGleCoonsAiqwRRnGFSvIJPqTFDsUoqBDXfVAxMemYktXjufvupEVUtLOXOQzqhubqqHyiSnbmThzAXHGiGwHvSVVyCNop$LiNNVHonNMjcsMYOcXMTvbUVoqnyLltqZbzGHuacGpLjylUjnRkRWCIMwdYxyakgWLCyFmHKUjdMTJYrjlQidsETjUMJTHUtmdYR$aIUlDfeEIaKNXcKPidvAlJImqpwQRNlQLHMttpbgFTytcnvZALyeRatXwVhwjbmcIYSTCizPdmZqjKiJKsvMVDdBwdppnRPqwPyd$DXLRhwUAQwFREkyzbNTnwGOWMamXHejCwKRtGErpjIApNoYJusiUpjCzGjSoPqrdWFdxyASBQMZuBhCvjvqZtAlsZKCYtHQsRMBI$LaTenwAziqAZYuFEEEVllVEJjInDNOEYrAbMJBJvlgzRjbjaTwVWxbstRkKjAzKOOIZDpaBoJYQjpNDlnyQbBnGJNCzvVdGuubzh$sCgxbVmvBtsFDFyyoTWdetygCFPRfZHbundpwbAiBznbgKyqXhvdFoGnwdfrojKkqGLmTbsvBALtKkTJPapcRgamWFiEkeIQGpfp$mNpOVsAGleCoonsAiqwRRnGFSvIJPqTFDsUoqBDXfVAxMemYktXjufvupEVUtLOXOQzqhubqqHyiSnbmThzAXHGiGwHvSVVyCNop$HwoNwQLHZXWuPUChnofviuxuTkdGCsgLmEhJyNgjcINkCvuKIFLwfcpjWPOBfpCkvHbUsfEXaMBehSmZAGhcnEPZHLXKMZwCYKoz$gNhixanTAFKOiwmCYVisjNwhApzOQXtvOHBBMbkOZXvtNYSFhtjyaMefdRPeTLMEIDSOcBQYOgLGlDcZAVIVOdzBpJiYLthjdoip$zbIDbTwTSOQnAqrIYFlXliGsvoEWEwRrtaWhDGgcVsGnbbRgNvNcIUvEuVkxdPDcyoqRicVvCFoiscckutJmXdKeTTrbNDwgmrUm$avuoKzAMLwOAhSsgpmPIljAinAYfdfauOQglaOcfMGJgEzmTAbJfFDyeazkIwRpyobJodyvCEUWDJSHpqzZLDFrCjKNcPyvpxqSr$LaTenwAziqAZYuFEEEVllVEJjInDNOEYrAbMJBJvlgzRjbjaTwVWxbstRkKjAzKOOIZDpaBoJYQjpNDlnyQbBnGJNCzvVdGuubzh");eval "$OpbypKKZATjIHCmRCdwjMwOjTgGfbwbTbQqaqMFVGxSbufyJGaTMhoAFnDTLRyrYWcbMFLgJyfEnVaobMnBXwxZkgmMlpsWarvoA$SWyCBARqYqTQnsygstfKLiRfACnSjQxJhhxGBMSEUqVQyFDhgMAUPmNdcuMdCbYlIueWBlVtOVBXfOdBxqBZyqnwDfHYhxxJnNAE$aIUlDfeEIaKNXcKPidvAlJImqpwQRNlQLHMttpbgFTytcnvZALyeRatXwVhwjbmcIYSTCizPdmZqjKiJKsvMVDdBwdppnRPqwPyd$gNhixanTAFKOiwmCYVisjNwhApzOQXtvOHBBMbkOZXvtNYSFhtjyaMefdRPeTLMEIDSOcBQYOgLGlDcZAVIVOdzBpJiYLthjdoip"
+PROXY=''
+HELP=''
+FORCE=''
+CHECK=''
+REMOVE=''
+VERSION=''
+VSRC_ROOT='/tmp/v2ray'
+EXTRACT_ONLY=''
+LOCAL=''
+LOCAL_INSTALL=''
+DIST_SRC='github'
+ERROR_IF_UPTODATE=''
+
+CUR_VER=""
+NEW_VER=""
+VDIS=''
+ZIPFILE="/tmp/v2ray/v2ray.zip"
+V2RAY_RUNNING=0
+
+CMD_INSTALL=""
+CMD_UPDATE=""
+SOFTWARE_UPDATED=0
+
+SYSTEMCTL_CMD=$(command -v systemctl 2>/dev/null)
+SERVICE_CMD=$(command -v service 2>/dev/null)
+
+#######color code########
+RED="31m"      # Error message
+GREEN="32m"    # Success message
+YELLOW="33m"   # Warning message
+BLUE="36m"     # Info message
+
+
+#########################
+while [[ $# > 0 ]]; do
+    case "$1" in
+        -p|--proxy)
+        PROXY="-x ${2}"
+        shift # past argument
+        ;;
+        -h|--help)
+        HELP="1"
+        ;;
+        -f|--force)
+        FORCE="1"
+        ;;
+        -c|--check)
+        CHECK="1"
+        ;;
+        --remove)
+        REMOVE="1"
+        ;;
+        --version)
+        VERSION="$2"
+        shift
+        ;;
+        --extract)
+        VSRC_ROOT="$2"
+        shift
+        ;;
+        --extractonly)
+        EXTRACT_ONLY="1"
+        ;;
+        -l|--local)
+        LOCAL="$2"
+        LOCAL_INSTALL="1"
+        shift
+        ;;
+        --source)
+        DIST_SRC="$2"
+        shift
+        ;;
+        --errifuptodate)
+        ERROR_IF_UPTODATE="1"
+        ;;
+        *)
+                # unknown option
+        ;;
+    esac
+    shift # past argument or value
+done
+
+###############################
+colorEcho(){
+    echo -e "\033[${1}${@:2}\033[0m" 1>& 2
+}
+
+archAffix(){
+    case "${1:-"$(uname -m)"}" in
+        i686|i386)
+            echo '32'
+        ;;
+        x86_64|amd64)
+            echo '64'
+        ;;
+        armv5tel)
+            echo 'arm32-v5'
+        ;;
+        armv6l)
+            echo 'arm32-v6'
+        ;;
+        armv7|armv7l)
+            echo 'arm32-v7a'
+        ;;
+        armv8|aarch64)
+            echo 'arm64-v8a'
+        ;;
+        *mips64le*)
+            echo 'mips64le'
+        ;;
+        *mips64*)
+            echo 'mips64'
+        ;;
+        *mipsle*)
+            echo 'mipsle'
+        ;;
+        *mips*)
+            echo 'mips'
+        ;;
+        *s390x*)
+            echo 's390x'
+        ;;
+        ppc64le)
+            echo 'ppc64le'
+        ;;
+        ppc64)
+            echo 'ppc64'
+        ;;
+        riscv64)
+            echo 'riscv64'
+        ;;
+        *)
+            return 1
+        ;;
+    esac
+
+	return 0
+}
+
+zipRoot() {
+    unzip -lqq "$1" | awk -e '
+        NR == 1 {
+            prefix = $4;
+        }
+        NR != 1 {
+            prefix_len = length(prefix);
+            cur_len = length($4);
+
+            for (len = prefix_len < cur_len ? prefix_len : cur_len; len >= 1; len -= 1) {
+                sub_prefix = substr(prefix, 1, len);
+                sub_cur = substr($4, 1, len);
+
+                if (sub_prefix == sub_cur) {
+                    prefix = sub_prefix;
+                    break;
+                }
+            }
+
+            if (len == 0) {
+                prefix = "";
+                nextfile;
+            }
+        }
+        END {
+            print prefix;
+        }
+    '
+}
+
+downloadV2Ray(){
+    rm -rf /tmp/v2ray
+    mkdir -p /tmp/v2ray
+    if [[ "${DIST_SRC}" == "jsdelivr" ]]; then
+        DOWNLOAD_LINK="https://cdn.jsdelivr.net/gh/v2ray/dist/v2ray-linux-${VDIS}.zip"
+    else
+        DOWNLOAD_LINK="https://github.com/v2fly/v2ray-core/releases/download/${NEW_VER}/v2ray-linux-${VDIS}.zip"
+    fi
+    colorEcho ${BLUE} "Downloading V2Ray: ${DOWNLOAD_LINK}"
+    curl ${PROXY} -L -H "Cache-Control: no-cache" -o ${ZIPFILE} ${DOWNLOAD_LINK}
+    if [ $? != 0 ];then
+        colorEcho ${RED} "Failed to download! Please check your network or try again."
+        return 3
+    fi
+    return 0
+}
+
+installSoftware(){
+    COMPONENT=$1
+    if [[ -n `command -v $COMPONENT` ]]; then
+        return 0
+    fi
+
+    getPMT
+    if [[ $? -eq 1 ]]; then
+        colorEcho ${RED} "The system package manager tool isn't APT or YUM, please install ${COMPONENT} manually."
+        return 1
+    fi
+    if [[ $SOFTWARE_UPDATED -eq 0 ]]; then
+        colorEcho ${BLUE} "Updating software repo"
+        $CMD_UPDATE
+        SOFTWARE_UPDATED=1
+    fi
+
+    colorEcho ${BLUE} "Installing ${COMPONENT}"
+    $CMD_INSTALL $COMPONENT
+    if [[ $? -ne 0 ]]; then
+        colorEcho ${RED} "Failed to install ${COMPONENT}. Please install it manually."
+        return 1
+    fi
+    return 0
+}
+
+# return 1: not apt, yum, or zypper
+getPMT(){
+    if [[ -n `command -v apt-get` ]];then
+        CMD_INSTALL="apt-get -y -qq install"
+        CMD_UPDATE="apt-get -qq update"
+    elif [[ -n `command -v yum` ]]; then
+        CMD_INSTALL="yum -y -q install"
+        CMD_UPDATE="yum -q makecache"
+    elif [[ -n `command -v zypper` ]]; then
+        CMD_INSTALL="zypper -y install"
+        CMD_UPDATE="zypper ref"
+    else
+        return 1
+    fi
+    return 0
+}
+
+normalizeVersion() {
+    if [ -n "$1" ]; then
+        case "$1" in
+            v*)
+                echo "$1"
+            ;;
+            *)
+                echo "v$1"
+            ;;
+        esac
+    else
+        echo ""
+    fi
+}
+
+# 1: new V2Ray. 0: no. 2: not installed. 3: check failed. 4: don't check.
+getVersion(){
+    if [[ -n "$VERSION" ]]; then
+        NEW_VER="$(normalizeVersion "$VERSION")"
+        return 4
+    else
+        VER="$(/usr/bin/v2ray/v2ray -version 2>/dev/null)"
+        RETVAL=$?
+        CUR_VER="$(normalizeVersion "$(echo "$VER" | head -n 1 | cut -d " " -f2)")"
+        TAG_URL="https://api.github.com/repos/v2fly/v2ray-core/releases/latest"
+        NEW_VER="$(normalizeVersion "$(curl ${PROXY} -H "Accept: application/json" -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0" -s "${TAG_URL}" --connect-timeout 10| grep 'tag_name' | cut -d\" -f4)")"
+
+        if [[ $? -ne 0 ]] || [[ $NEW_VER == "" ]]; then
+            colorEcho ${RED} "Failed to fetch release information. Please check your network or try again."
+            return 3
+        elif [[ $RETVAL -ne 0 ]];then
+            return 2
+        elif [[ $NEW_VER != $CUR_VER ]];then
+            return 1
+        fi
+        return 0
+    fi
+}
+
+stopV2ray(){
+    colorEcho ${BLUE} "Shutting down V2Ray service."
+    if [[ -n "${SYSTEMCTL_CMD}" ]] || [[ -f "/lib/systemd/system/v2ray.service" ]] || [[ -f "/etc/systemd/system/v2ray.service" ]]; then
+        ${SYSTEMCTL_CMD} stop v2ray
+    elif [[ -n "${SERVICE_CMD}" ]] || [[ -f "/etc/init.d/v2ray" ]]; then
+        ${SERVICE_CMD} v2ray stop
+    fi
+    if [[ $? -ne 0 ]]; then
+        colorEcho ${YELLOW} "Failed to shutdown V2Ray service."
+        return 2
+    fi
+    return 0
+}
+
+startV2ray(){
+    if [ -n "${SYSTEMCTL_CMD}" ] && [[ -f "/lib/systemd/system/v2ray.service" || -f "/etc/systemd/system/v2ray.service" ]]; then
+        ${SYSTEMCTL_CMD} start v2ray
+    elif [ -n "${SERVICE_CMD}" ] && [ -f "/etc/init.d/v2ray" ]; then
+        ${SERVICE_CMD} v2ray start
+    fi
+    if [[ $? -ne 0 ]]; then
+        colorEcho ${YELLOW} "Failed to start V2Ray service."
+        return 2
+    fi
+    return 0
+}
+
+installV2Ray(){
+    # Install V2Ray binary to /usr/bin/v2ray
+    mkdir -p '/etc/v2ray' '/var/log/v2ray' && \
+    unzip -oj "$1" "$2v2ray" "$2geoip.dat" "$2geosite.dat" -d '/usr/bin/v2ray' && \
+    chmod +x '/usr/bin/v2ray/v2ray' || {
+        colorEcho ${RED} "Failed to copy V2Ray binary and resources."
+        return 1
+    }
+
+    # Install V2Ray server config to /etc/v2ray
+    if [ ! -f '/etc/v2ray/config.json' ]; then
+        local PORT="$(($RANDOM + 10000))"
+        local UUID="$(cat '/proc/sys/kernel/random/uuid')"
+
+        unzip -pq "$1" "$2vpoint_vmess_freedom.json" | \
+        sed -e "s/10086/${PORT}/g; s/23ad6b10-8d1a-40f7-8ad0-e3e35cd38297/${UUID}/g;" - > \
+        '/etc/v2ray/config.json' || {
+            colorEcho ${YELLOW} "Failed to create V2Ray configuration file. Please create it manually."
+            return 1
+        }
+
+        colorEcho ${BLUE} "PORT:${PORT}"
+        colorEcho ${BLUE} "UUID:${UUID}"
+    fi
+}
+
+
+installInitScript(){
+    if [[ ! -f "/etc/systemd/system/v2ray.service" && ! -f "/lib/systemd/system/v2ray.service" ]]; then
+        cat > /etc/systemd/system/v2ray.service <<EOF
+[Unit]
+Description=V2Ray Service
+Documentation=https://www.v2ray.com/ https://www.v2fly.org/
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/v2ray/v2ray -config /etc/v2ray/config.json
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+EOF
+cat > /etc/systemd/system/v2ray@.service <<-EOF
+[Unit]
+Description=V2Ray Service
+After=network.target nss-lookup.target
+ 
+[Service]
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/v2ray/v2ray -config /etc/v2ray/%i.json
+Restart=on-failure
+ 
+[Install]
+WantedBy=multi-user.target
+EOF
+        systemctl enable v2ray.service
+    fi
+}
+
+Help(){
+  cat - 1>& 2 << EOF
+./install-release.sh [-h] [-c] [--remove] [-p proxy] [-f] [--version vx.y.z] [-l file]
+  -h, --help            Show help
+  -p, --proxy           To download through a proxy server, use -p socks5://127.0.0.1:1080 or -p http://127.0.0.1:3128 etc
+  -f, --force           Force install
+      --version         Install a particular version, use --version v3.15
+  -l, --local           Install from a local file
+      --remove          Remove installed V2Ray
+  -c, --check           Check for update
+EOF
+}
+
+remove(){
+    if [[ -n "${SYSTEMCTL_CMD}" ]] && [[ -f "/etc/systemd/system/v2ray.service" ]];then
+        if pgrep "v2ray" > /dev/null ; then
+            stopV2ray
+        fi
+        systemctl disable v2ray.service
+        rm -rf "/usr/bin/v2ray" "/etc/systemd/system/v2ray.service"
+        if [[ $? -ne 0 ]]; then
+            colorEcho ${RED} "Failed to remove V2Ray."
+            return 0
+        else
+            colorEcho ${GREEN} "Removed V2Ray successfully."
+            colorEcho ${BLUE} "If necessary, please remove configuration file and log file manually."
+            return 0
+        fi
+    elif [[ -n "${SYSTEMCTL_CMD}" ]] && [[ -f "/lib/systemd/system/v2ray.service" ]];then
+        if pgrep "v2ray" > /dev/null ; then
+            stopV2ray
+        fi
+        systemctl disable v2ray.service
+        rm -rf "/usr/bin/v2ray" "/lib/systemd/system/v2ray.service"
+        if [[ $? -ne 0 ]]; then
+            colorEcho ${RED} "Failed to remove V2Ray."
+            return 0
+        else
+            colorEcho ${GREEN} "Removed V2Ray successfully."
+            colorEcho ${BLUE} "If necessary, please remove configuration file and log file manually."
+            return 0
+        fi
+    elif [[ -n "${SERVICE_CMD}" ]] && [[ -f "/etc/init.d/v2ray" ]]; then
+        if pgrep "v2ray" > /dev/null ; then
+            stopV2ray
+        fi
+        rm -rf "/usr/bin/v2ray" "/etc/init.d/v2ray"
+        if [[ $? -ne 0 ]]; then
+            colorEcho ${RED} "Failed to remove V2Ray."
+            return 0
+        else
+            colorEcho ${GREEN} "Removed V2Ray successfully."
+            colorEcho ${BLUE} "If necessary, please remove configuration file and log file manually."
+            return 0
+        fi
+    else
+        colorEcho ${YELLOW} "V2Ray not found."
+        return 0
+    fi
+}
+
+checkUpdate(){
+    echo "Checking for update."
+    VERSION=""
+    getVersion
+    RETVAL="$?"
+    if [[ $RETVAL -eq 1 ]]; then
+        colorEcho ${BLUE} "Found new version ${NEW_VER} for V2Ray.(Current version:$CUR_VER)"
+    elif [[ $RETVAL -eq 0 ]]; then
+        colorEcho ${BLUE} "No new version. Current version is ${NEW_VER}."
+    elif [[ $RETVAL -eq 2 ]]; then
+        colorEcho ${YELLOW} "No V2Ray installed."
+        colorEcho ${BLUE} "The newest version for V2Ray is ${NEW_VER}."
+    fi
+    return 0
+}
+
+main(){
+    #helping information
+    [[ "$HELP" == "1" ]] && Help && return
+    [[ "$CHECK" == "1" ]] && checkUpdate && return
+    [[ "$REMOVE" == "1" ]] && remove && return
+
+    local ARCH=$(uname -m)
+    VDIS="$(archAffix)"
+
+    # extract local file
+    if [[ $LOCAL_INSTALL -eq 1 ]]; then
+        colorEcho ${YELLOW} "Installing V2Ray via local file. Please make sure the file is a valid V2Ray package, as we are not able to determine that."
+        NEW_VER=local
+        rm -rf /tmp/v2ray
+        ZIPFILE="$LOCAL"
+        #FILEVDIS=`ls /tmp/v2ray |grep v2ray-v |cut -d "-" -f4`
+        #SYSTEM=`ls /tmp/v2ray |grep v2ray-v |cut -d "-" -f3`
+        #if [[ ${SYSTEM} != "linux" ]]; then
+        #    colorEcho ${RED} "The local V2Ray can not be installed in linux."
+        #    return 1
+        #elif [[ ${FILEVDIS} != ${VDIS} ]]; then
+        #    colorEcho ${RED} "The local V2Ray can not be installed in ${ARCH} system."
+        #    return 1
+        #else
+        #    NEW_VER=`ls /tmp/v2ray |grep v2ray-v |cut -d "-" -f2`
+        #fi
+    else
+        # download via network and extract
+        installSoftware "curl" || return $?
+        getVersion
+        RETVAL="$?"
+        if [[ $RETVAL == 0 ]] && [[ "$FORCE" != "1" ]]; then
+            colorEcho ${BLUE} "Latest version ${CUR_VER} is already installed."
+            if [ -n "${ERROR_IF_UPTODATE}" ]; then
+              return 10
+            fi
+            return
+        elif [[ $RETVAL == 3 ]]; then
+            return 3
+        else
+            colorEcho ${BLUE} "Installing V2Ray ${NEW_VER} on ${ARCH}"
+            downloadV2Ray || return $?
+        fi
+    fi
+
+    local ZIPROOT="$(zipRoot "${ZIPFILE}")"
+    installSoftware unzip || return $?
+
+    if [ -n "${EXTRACT_ONLY}" ]; then
+        colorEcho ${BLUE} "Extracting V2Ray package to ${VSRC_ROOT}."
+
+        if unzip -o "${ZIPFILE}" -d ${VSRC_ROOT}; then
+            colorEcho ${GREEN} "V2Ray extracted to ${VSRC_ROOT%/}${ZIPROOT:+/${ZIPROOT%/}}, and exiting..."
+            return 0
+        else
+            colorEcho ${RED} "Failed to extract V2Ray."
+            return 2
+        fi
+    fi
+
+    if pgrep "v2ray" > /dev/null ; then
+        V2RAY_RUNNING=1
+        stopV2ray
+    fi
+    installV2Ray "${ZIPFILE}" "${ZIPROOT}" || return $?
+    installInitScript "${ZIPFILE}" "${ZIPROOT}" || return $?
+    if [[ ${V2RAY_RUNNING} -eq 1 ]];then
+        colorEcho ${BLUE} "Restarting V2Ray service."
+        startV2ray
+    fi
+    colorEcho ${GREEN} "V2Ray ${NEW_VER} is installed."
+    rm -rf /tmp/v2ray
+    return 0
+}
+
+main
