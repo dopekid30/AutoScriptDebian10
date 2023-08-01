@@ -297,8 +297,8 @@ startV2ray(){
 installV2Ray(){
     # Install V2Ray binary to /usr/bin/v2ray
     mkdir -p '/etc/v2ray' '/var/log/v2ray' && \
-    unzip -oj "$1" "$2v2ray" "$2geoip.dat" "$2geosite.dat" -d '/usr/bin/v2ray' && \
-    chmod +x '/usr/bin/v2ray/v2ray' || {
+    unzip -oj "$1" "$2v2ray" "$2v2ctl" "$2geoip.dat" "$2geosite.dat" -d '/usr/bin/v2ray' && \
+    chmod +x '/usr/bin/v2ray/v2ray' '/usr/bin/v2ray/v2ctl' || {
         colorEcho ${RED} "Failed to copy V2Ray binary and resources."
         return 1
     }
